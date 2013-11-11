@@ -63,6 +63,13 @@ local function fn(Sim)
 
 	-- Make it inspectable
 	inst:AddComponent("inspectable")
+	local inspect_sayings = {	
+								"Looks cumbersome... cucumbersome", 
+								"I bet this would make a fine pickle", 
+								"Cool as a cucumber",
+								"I shall call him Larry",
+							}
+	inst.components.inspectable:SetDescription(inspect_sayings[math.random(#inspect_sayings)])
 	
 	-- Make it an inventory item
 	inst:AddComponent("inventoryitem")
@@ -72,7 +79,7 @@ local function fn(Sim)
 	-- It can burn!
 	MakeSmallBurnable(inst)
 	
-	-- Not sure what this one does yet...
+	-- This makes it so fire can spread to/from this object
 	MakeSmallPropagator(inst)        
 	
 	-- Make it so cucumbers can be used as bait in a trap

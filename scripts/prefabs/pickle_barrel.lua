@@ -107,6 +107,13 @@ local function fn(Sim)
 
 
     inst:AddComponent("inspectable")
+	local inspect_sayings = {	
+								"Pickled foods last a long time, right?", 
+								"Mmm, salty goodness", 
+								"Not to be confused with pickleball",
+								"Serves sandwiches, right?",
+							}
+	inst.components.inspectable:SetDescription(inspect_sayings[math.random(#inspect_sayings)])	
 	inst.components.inspectable.getstatus = getstatus
 
 
