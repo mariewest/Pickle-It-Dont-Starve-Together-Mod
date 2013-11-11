@@ -17,4 +17,4 @@ api_version =  4
 icon_atlas = "cucumber.xml"
 icon = "cucumber.tex"
 
-forumthread = ""
+forumthread = "http://forums.kleientertainment.com/index.php?/topic/29559-wip-pickle-it-a-mod-that-lets-you-pickle-things/"
