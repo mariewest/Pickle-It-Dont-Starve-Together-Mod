@@ -1,6 +1,6 @@
 --[[	Pickle It Mod
 
-By: Marie (xaben.com) and Nick West (twitter.com/nickwest)
+By: Marie (mariewest.com) and Nick West (nickwest.me)
 Art by: Sean Closson (seanclosson.com)
 
 ]]--
