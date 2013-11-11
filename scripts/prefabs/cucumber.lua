@@ -96,5 +96,8 @@ local prefabs =
 	"spoiled_food",
 }    
 
+-- Make it so this can go in the cook_pot
+AddIngredientValues({"cucumber"}, {fruit=1}, true)
+
 -- Return our prefabbed cucumber
 return Prefab( "common/inventory/cucumber", fn, assets, prefabs)
