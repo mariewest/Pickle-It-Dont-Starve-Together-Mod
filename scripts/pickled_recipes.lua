@@ -46,8 +46,7 @@ local pickled_data = {
 
 -- Global function to easily create a new prefab for pickled foods
 function pickleit_CreatePickledPrefab(pickled_data)
-	pickleit_data[pickled_data.name] = pickled_data
-	
+
 	local function fn(sim)
 		-- Create entity
 		local inst = CreateEntity()
