@@ -35,9 +35,11 @@ local widgetbuttoninfo = {
 }
 
 local function itemtest(inst, item, slot)
-	if cooking.IsCookingIngredient(item.prefab) then
-		return true
-	end
+	-- if cooking.IsCookingIngredient(item.prefab) then		-- TEMP! Think about this!
+		-- return true
+	-- end
+	
+	return true
 end
 
 local function onopen(inst)
@@ -86,11 +88,10 @@ local function fn(Sim)
 
 	
     inst:AddComponent("pickler")
-    -- inst.components.stewer.onstartcooking = startcookfn
-    -- inst.components.stewer.oncontinuecooking = continuecookfn
-    -- inst.components.stewer.oncontinuedone = continuedonefn
-    -- inst.components.stewer.ondonecooking = donecookfn
-    -- inst.components.stewer.onharvest = harvestfn
+    -- inst.components.pickler.onstartpickling = startpicklefn
+    -- inst.components.pickler.oncontinuepickling = continuepicklefn
+	-- inst.components.pickler.oncontinuedone = continuedonefn
+    -- inst.components.pickler.ondonepickling = donepicklefn
     
     inst:AddComponent("container")
     inst.components.container.itemtestfn = itemtest
