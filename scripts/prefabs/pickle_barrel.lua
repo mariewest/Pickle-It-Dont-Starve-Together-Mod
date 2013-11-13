@@ -1,10 +1,13 @@
 require "prefabutil"
+require "recipe"
 
 local cooking = require("cooking")
 
 local assets=
 {
 	Asset("ANIM", "anim/pickle_barrel.zip"),
+    Asset("ATLAS", "images/inventoryimages/pickle_barrel.xml"),
+    Asset("IMAGE", "images/inventoryimages/pickle_barrel.tex"),
 }
 
 local prefabs = {}
@@ -134,6 +137,11 @@ local function fn(Sim)
 	--inst:ListenForEvent( "onbuilt", onbuilt)
     return inst
 end
+
+-- Add recipe for pickle barrel
+local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 4),Ingredient("goldnugget", 2), Ingredient("wetgoop", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_TWO, "pickle_barrel_placer")
+crafting_recipe.atlas = "images/inventoryimages/pickle_barrel.xml"
+
 
 return Prefab( "common/pickle_barrel", fn, assets, prefabs),
 		MakePlacer( "common/pickle_barrel_placer", "pickle_barrel", "pickle_barrel", "idle" ) 
