@@ -72,5 +72,7 @@ local function fn_seeds()
 	return inst
 end
 
+STRINGS.NAMES.CUCUMBER_SEEDS = "Cucumber Seeds"
+
 -- Return our prefabbed cucumber seeds
 return Prefab( "common/inventory/cucumber_seeds", fn_seeds, assets)

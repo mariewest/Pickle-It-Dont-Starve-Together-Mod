@@ -15,12 +15,6 @@ local pickled_data = {
 	burnable = true,
 	baitable = true,
 	
-	description = {
-		"My grandpa puts sauerkraut in his chocolate cakes", 
-		"Try substituting sauerkraut for coconut when baking",
-		"Also known as liberty cabbage",
-	},
-	
 	assets = {
 		Asset("ANIM", "anim/pickled_food.zip"),
 	    Asset("ATLAS", "images/inventoryimages/cabbage_pickled.xml"),	-- Cucumber Atlas for inventory TEX
@@ -32,6 +26,15 @@ local pickled_data = {
 	art_anim = 'idle',
 	
 	source = 'cabbage',
+}
+
+STRINGS.NAMES.CABBAGE_PICKLED = "Sauerkraut"
+
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE_PICKLED = {	
+	"My grandpa puts sauerkraut in his chocolate cakes", 
+	"Try substituting sauerkraut for coconut when baking",
+	"Also known as liberty cabbage",
 }
 
 return pickleit_CreatePickledPrefab(pickled_data)

@@ -38,12 +38,7 @@ local function fn_cooked(Sim)
 	
 	-- Make it inspectable
 	inst:AddComponent("inspectable")
-	local inspect_sayings = {	
-								"It'll never become a pickle now", 
-								"Tastes like grilled water", 
-								"Poor Larry",
-							}
-	inst.components.inspectable:SetDescription(inspect_sayings[math.random(#inspect_sayings)])	
+
 	-- Make it an inventory item
 	inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "cucumber_cooked"
@@ -63,6 +58,15 @@ local function fn_cooked(Sim)
 
 	return inst
 end
+
+STRINGS.NAMES.CUCUMBER_COOKED = "Grilled Cucumber"
+
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_COOKED = {	
+	"It'll never become a pickle now", 
+	"Tastes like grilled water", 
+	"Poor Larry",
+}
 
 -- Return our prefabbed cooked cucumber
 return Prefab( "common/inventory/cucumber_cooked", fn_cooked, assets)

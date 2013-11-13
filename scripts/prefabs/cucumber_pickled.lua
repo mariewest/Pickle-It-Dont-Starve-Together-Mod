@@ -15,12 +15,6 @@ local pickled_data = {
 	burnable = true,
 	baitable = true,
 	
-	description = {
-		"This is quite a pickle", 
-		"Why do gherkins giggle? They're PICKLish!",
-		"If only I had a hamburger to put this on",
-	},
-	
 	assets = {
 		Asset("ANIM", "anim/pickled_food.zip"),
 	    Asset("ATLAS", "images/inventoryimages/cucumber_pickled.xml"),	-- Cucumber Atlas for inventory TEX
@@ -32,6 +26,15 @@ local pickled_data = {
 	art_anim = 'idle',
 	
 	source = 'cucumber',
+}
+
+STRINGS.NAMES.CUCUMBER_PICKLED = "Pickle"
+
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_PICKLED = {	
+	"This is quite a pickle", 
+	"Why do gherkins giggle? They're PICKLish!",
+	"If only I had a hamburger to put this on",
 }
 
 return pickleit_CreatePickledPrefab(pickled_data)

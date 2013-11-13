@@ -26,11 +26,6 @@ local pickled_data = {
 	burnable = true,
 	baitable = true,
 	
-	description = {
-		"Looks tasty", 
-		"Can't wait to eat it!",
-	},
-	
 	assets = {
 		Asset("ANIM", "anim/my_pickled_food.zip"),
 	},
@@ -74,7 +69,6 @@ function pickleit_CreatePickledPrefab(pickled_data)
 		
 		-- Make it inspectable
 		inst:AddComponent("inspectable")
-		inst.components.inspectable:SetDescription(pickled_data.description[math.random(#pickled_data.description)])
 
 		-- It can go in the inventory
 		inst:AddComponent("inventoryitem")

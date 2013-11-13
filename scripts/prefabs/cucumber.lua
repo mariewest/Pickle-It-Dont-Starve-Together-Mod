@@ -63,13 +63,6 @@ local function fn(Sim)
 
 	-- Make it inspectable
 	inst:AddComponent("inspectable")
-	local inspect_sayings = {	
-								"Looks cumbersome... cucumbersome", 
-								"I bet this would make a fine pickle", 
-								"Cool as a cucumber",
-								"I shall call him Larry",
-							}
-	inst.components.inspectable:SetDescription(inspect_sayings[math.random(#inspect_sayings)])
 	
 	-- Make it an inventory item
 	inst:AddComponent("inventoryitem")
@@ -94,6 +87,16 @@ local function fn(Sim)
 
 	return inst
 end
+
+STRINGS.NAMES.CUCUMBER = "Cucumber"
+
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER = {	
+	"Looks cumbersome... cucumbersome", 
+	"I bet this would make a fine pickle", 
+	"Cool as a cucumber",
+	"I shall call him Larry",
+}
 
 -- List of prefabs [I'm unclear why these are needed here, but veggies.lua provides them this way]
 local prefabs =

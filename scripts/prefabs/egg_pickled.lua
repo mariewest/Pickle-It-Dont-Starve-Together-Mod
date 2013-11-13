@@ -15,11 +15,6 @@ local pickled_data = {
 	burnable = true,
 	baitable = true,
 	
-	description = {
-		"Am I supposed to actually eat this?", 
-		"Who decided this should be edible?",
-	},
-	
 	assets = {
 		Asset("ANIM", "anim/pickled_food.zip"),
 	    Asset("ATLAS", "images/inventoryimages/egg_pickled.xml"),	-- Cucumber Atlas for inventory TEX
@@ -31,6 +26,14 @@ local pickled_data = {
 	art_anim = 'idle',
 	
 	source = 'bird_egg',
+}
+
+STRINGS.NAMES.EGG_PICKLED = "Pickled Egg"
+
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.EGG_PICKLED = {	
+	"Am I supposed to actually eat this?", 
+	"Who decided this should be edible?",
 }
 
 return pickleit_CreatePickledPrefab(pickled_data)

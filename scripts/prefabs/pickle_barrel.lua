@@ -131,6 +131,8 @@ local function fn(Sim)
     return inst
 end
 
+STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
+
 -- Randomizes the inspection line upon inspection.
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
 	"Pickled foods last a long time, right?", 
