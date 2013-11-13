@@ -111,13 +111,6 @@ local function fn(Sim)
 
 
     inst:AddComponent("inspectable")
-	local inspect_sayings = {	
-								"Pickled foods last a long time, right?", 
-								"Mmm, salty goodness", 
-								"Not to be confused with pickleball",
-								"Serves sandwiches, right?",
-							}
-	inst.components.inspectable:SetDescription(inspect_sayings[math.random(#inspect_sayings)])	
 	inst.components.inspectable.getstatus = getstatus
 
 
@@ -137,6 +130,14 @@ local function fn(Sim)
 	--inst:ListenForEvent( "onbuilt", onbuilt)
     return inst
 end
+
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
+	"Pickled foods last a long time, right?", 
+	"Mmm, salty goodness", 
+	"Not to be confused with pickleball",
+	"Serves sandwiches, right?",
+}
 
 -- Add recipe for pickle barrel
 local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 4),Ingredient("goldnugget", 2), Ingredient("wetgoop", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_TWO, "pickle_barrel_placer")
