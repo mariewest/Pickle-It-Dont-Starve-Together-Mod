@@ -1,9 +1,9 @@
 -- Our cabbage asset files
 local assets=
 {
-    Asset("ANIM", "anim/cucumber.zip"),						-- Cucumber animation
-    Asset("ATLAS", "images/inventoryimages/cucumber.xml"),	-- Cucumber Atlas for inventory TEX
-    Asset("IMAGE", "images/inventoryimages/cucumber.tex"),	-- TEX for inventory
+    Asset("ANIM", "anim/cabbage.zip"),						-- cabbage animation
+    Asset("ATLAS", "images/inventoryimages/cabbage.xml"),	-- cabbage Atlas for inventory TEX
+    Asset("IMAGE", "images/inventoryimages/cabbage.tex"),	-- TEX for inventory
 }
 
 -- This is copied from prefabs/veggies.lua so we can neatly inject our veggie into the global VEGGIES table
@@ -29,7 +29,7 @@ local cabbage = MakeVegStats(3,	TUNING.CALORIES_SMALL,	TUNING.HEALING_TINY,	TUNI
 -- Add it to the global VEGGIES table
 VEGGIES['cabbage'] = cabbage
 
--- We added this to the VEGGIES table so that cucumbers can be grown from "seeds" along with all the other veggies.
+-- We added this to the VEGGIES table so that cabbage can be grown from "seeds" along with all the other veggies.
 
 
 -- Base Cabbage (mostly copied from prefabs/veggies.lua)								
@@ -41,8 +41,8 @@ local function fn(Sim)
 	MakeInventoryPhysics(inst)
 	
 	-- Set animation info
-	inst.AnimState:SetBuild("cucumber")
-	inst.AnimState:SetBank("cucumber")
+	inst.AnimState:SetBuild("cabbage")
+	inst.AnimState:SetBank("cabbage")
 	inst.AnimState:PlayAnimation("idle")
 	
 	-- Make it edible
@@ -66,8 +66,8 @@ local function fn(Sim)
 	
 	-- Make it an inventory item
 	inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.imagename = "cucumber"	-- Use our cucumber.tex sprite
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/cucumber.xml"	-- here's the atlas for our tex
+    inst.components.inventoryitem.imagename = "cabbage"	-- Use our cabbage.tex sprite
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/cabbage.xml"	-- here's the atlas for our tex
 	
 	-- It can burn!
 	MakeSmallBurnable(inst)
@@ -106,7 +106,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"cabbage"}, {veggie=1}, true)
+AddIngredientValues({"cabbage"}, {fruit=1}, true)
 
 -- Return our prefabbed cabbage
 return Prefab( "common/inventory/cabbage", fn, assets, prefabs)

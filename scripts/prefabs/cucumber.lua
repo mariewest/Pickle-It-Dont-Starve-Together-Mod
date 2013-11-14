@@ -107,7 +107,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"cucumber"}, {veggie=1}, true)
+AddIngredientValues({"cucumber"}, {fruit=1}, true)
 
 -- Return our prefabbed cucumber
 return Prefab( "common/inventory/cucumber", fn, assets, prefabs)
