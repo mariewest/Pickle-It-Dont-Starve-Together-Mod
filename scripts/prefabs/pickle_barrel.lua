@@ -33,7 +33,11 @@ local widgetbuttoninfo = {
 }
 
 local function itemtest(inst, item, slot)
-	return true
+	if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "PICKLED" then
+		return true
+	end	
+	
+	return false
 end
 
 -- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.

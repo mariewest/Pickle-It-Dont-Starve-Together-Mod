@@ -39,6 +39,7 @@ local function fn(Sim)
     inst.components.edible.healthvalue = TUNING.SPOILED_HEALTH*5
     inst.components.edible.hungervalue = TUNING.SPOILED_HUNGER*2
     inst.components.edible.sanityvalue = -TUNING.SANITY_MED
+	inst.components.edible.foodtype = "PICKLED"
 
 	return inst
 end

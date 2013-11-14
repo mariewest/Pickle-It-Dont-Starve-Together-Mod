@@ -10,7 +10,7 @@ local pickled_data = {
 	sanity = TUNING.SANITY_TINY,
 	perishtime = TUNING.PERISH_SLOW,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
-	food_type = "PICKLED",
+	foodtype = "PICKLED",
 	
 	burnable = true,
 	baitable = true,
