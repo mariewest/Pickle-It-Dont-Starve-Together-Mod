@@ -4,11 +4,6 @@ local Pickler = Class(function(self, inst)
     self.inst = inst
     self.pickling = false
     self.done = false
-    
-    -- self.product = nil
-    -- self.product_spoilage = nil
-    -- self.recipes = nil
-    -- self.default_recipe = nil
 end)
 
 function Pickler:CanPickle()
@@ -22,22 +17,24 @@ end
 local function dopickling(inst)
 	inst.components.pickler.task = nil
 	
-	if inst.components.pickler.ondonecooking then
-		inst.components.pickler.ondonecooking(inst)
+	if inst.components.pickler.ondonepickling then
+		inst.components.pickler.ondonepickling(inst)
 	end
 	
-	inst.components.pickler.done = true
 	inst.components.pickler.pickling = false
 	
 	inst.components.container.canbeopened = true
 end
 
 function Pickler:StartPickling()
-	if not self.done and not self.pickling then
+	if not self.pickling then
 		if self.inst.components.container then
 		
 			self.pickling = true
-			self.done = false
+			
+			if self.onstartpickling then
+				self.onstartpickling(self.inst)
+			end
 		
 			-- Pickle all the items
 			for k,v in pairs (self.inst.components.container.slots) do

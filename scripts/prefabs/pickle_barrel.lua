@@ -11,10 +11,6 @@ local assets=
 }
 
 local prefabs = {}
--- for k,v in pairs(cooking.recipes.pickle_barrel) do
-	-- table.insert(prefabs, v.name)
--- end
-					
 	
 -- 	Define the positions of the slots
 local slotpos = {}
@@ -23,7 +19,6 @@ for y = 2, 1, -1 do
 		table.insert(slotpos, Vector3(80*x-80*2+80, 80*y-80*2+80,0))
 	end
 end
-
 
 local widgetbuttoninfo = {
 	text = "Pickle",
@@ -38,25 +33,44 @@ local widgetbuttoninfo = {
 }
 
 local function itemtest(inst, item, slot)
-	-- if cooking.IsCookingIngredient(item.prefab) then		-- TEMP! Think about this!
-		-- return true
-	-- end
-	
 	return true
 end
 
+-- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.
+local function setdescription(isPickling)
+	if isPickling == true then
+		STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
+			"It takes a while for things to pickle", 
+			"This pickling sure takes a while", 
+			"I'm stuck in a pickle until my food is done pickling",
+		}
+	else
+		STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
+			"Pickled foods last a long time, right?", 
+			"Mmm, salty goodness", 
+			"Not to be confused with pickleball",
+			"Serves sandwiches, right?",
+		}
+	end
+end
+
 local function onopen(inst)
-	-- inst.AnimState:PlayAnimation("cooking_pre_loop", true)
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_open", "open")
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot", "snd")
 end
 
 local function onclose(inst)
-	-- if not inst.components.stewer.cooking then
-		-- inst.AnimState:PlayAnimation("idle_empty")
-		-- inst.SoundEmitter:KillSound("snd")
-	-- end
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_close", "close")
+end
+
+local function startpicklefn(inst)
+	-- Change the pickle barrel descriptions to descriptions that indicate the barrel is currently pickling
+	setdescription(true)
+end
+
+local function donepicklefn(inst)
+	-- Change the pickle barrel descriptions back to default
+	setdescription(false)
 end
 
 local function getstatus(inst)
@@ -91,10 +105,10 @@ local function fn(Sim)
 
 	
     inst:AddComponent("pickler")
-    -- inst.components.pickler.onstartpickling = startpicklefn
+    inst.components.pickler.onstartpickling = startpicklefn
     -- inst.components.pickler.oncontinuepickling = continuepicklefn
 	-- inst.components.pickler.oncontinuedone = continuedonefn
-    -- inst.components.pickler.ondonepickling = donepicklefn
+    inst.components.pickler.ondonepickling = donepicklefn
     
     inst:AddComponent("container")
     inst.components.container.itemtestfn = itemtest
@@ -127,19 +141,14 @@ local function fn(Sim)
 	-- inst.components.workable:SetOnWorkCallback(onhit)
 
 	--MakeSnowCovered(inst, .01)    
-	--inst:ListenForEvent( "onbuilt", onbuilt)
+	--inst:ListenForEvent("onbuilt", onbuilt)
     return inst
 end
 
 STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
 
--- Randomizes the inspection line upon inspection.
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
-	"Pickled foods last a long time, right?", 
-	"Mmm, salty goodness", 
-	"Not to be confused with pickleball",
-	"Serves sandwiches, right?",
-}
+-- Set the pickle barrel description to default values (description changes when pickling)
+setdescription(false)
 
 -- Add recipe for pickle barrel
 local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 4),Ingredient("goldnugget", 2), Ingredient("wetgoop", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_TWO, "pickle_barrel_placer")
