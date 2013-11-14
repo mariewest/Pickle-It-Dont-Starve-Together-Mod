@@ -1,6 +1,6 @@
 --[[
-		There was a catch with getting our seeds to grow and have our cucumber show on the farm when matured
-		We needed to define a second folder "cucumber01" within our cucumber.scml file (see file for clarity) 
+		There was a catch with getting our seeds to grow and have our cabbage show on the farm when matured
+		We needed to define a second folder "cabbage01" within our cabbage.scml file (see file for clarity) 
 		This required manual editing after using spriter (there is probably a way to do this within spriter though)
 		
 		The added layer/folder name.."01" is hard coded into the plant_normal.lua prefab, so we accomodated this in our anim
@@ -8,8 +8,8 @@
 
 -- Our Cabbage Seeds asset (no animation, since we're using the base seed animation, like all seeds)
 local assets={
-    Asset("ATLAS", "images/inventoryimages/cucumber_seeds.xml"),
-    Asset("IMAGE", "images/inventoryimages/cucumber_seeds.tex"),
+    Asset("ATLAS", "images/inventoryimages/cabbage_seeds.xml"),
+    Asset("IMAGE", "images/inventoryimages/cabbage_seeds.tex"),
 }
 
 -- Cabbage Seeds (mostly copied from prefabs/veggies.lua)								
@@ -41,8 +41,8 @@ local function fn_seeds()
 	
 	-- It's an inventory item
 	inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.imagename = "cucumber_seeds"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/cucumber_seeds.xml"
+    inst.components.inventoryitem.imagename = "cabbage_seeds"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/cabbage_seeds.xml"
 	
 	-- By default use the idle animation
 	inst.AnimState:PlayAnimation("idle")

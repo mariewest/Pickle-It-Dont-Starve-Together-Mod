@@ -1,9 +1,9 @@
 -- Our grilled cabbage asset files
 local assets=
 {
-    Asset("ANIM", "anim/cucumber.zip"),								-- Cucumber animation (has "cooked" animation in it)
-    Asset("ATLAS", "images/inventoryimages/cucumber_cooked.xml"),	-- Grilled Cucumber atlas for TEX
-    Asset("IMAGE", "images/inventoryimages/cucumber_cooked.tex"),	-- Grilled Cucumber TEX for inventory
+    Asset("ANIM", "anim/cabbage.zip"),								-- Cabbage animation (has "cooked" animation in it)
+    Asset("ATLAS", "images/inventoryimages/cabbage_cooked.xml"),	-- Grilled cabbage atlas for TEX
+    Asset("IMAGE", "images/inventoryimages/cabbage_cooked.tex"),	-- Grilled cabbage TEX for inventory
 }
 
 -- Base Cooked Cabbage (mostly copied from prefabs/veggies.lua)								
@@ -15,9 +15,9 @@ local function fn_cooked(Sim)
 	MakeInventoryPhysics(inst)
 	
 	-- Set our animation info: bank/build/animation
-	inst.AnimState:SetBank("cucumber")
-	inst.AnimState:SetBuild("cucumber")
-	inst.AnimState:PlayAnimation("cooked")	-- Cooked is part of our base cucumber
+	inst.AnimState:SetBank("cabbage")
+	inst.AnimState:SetBuild("cabbage")
+	inst.AnimState:PlayAnimation("cooked")	-- Cooked is part of our base cabbage
 	
 	-- Make this perishable
 	inst:AddComponent("perishable")
@@ -41,8 +41,8 @@ local function fn_cooked(Sim)
 	
 	-- Make it an inventory item
 	inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.imagename = "cucumber_cooked"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/cucumber_cooked.xml"
+    inst.components.inventoryitem.imagename = "cabbage_cooked"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/cabbage_cooked.xml"
 
 	-- Cooked cabbage can burn
 	MakeSmallBurnable(inst)

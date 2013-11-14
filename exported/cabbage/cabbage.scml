@@ -2,21 +2,33 @@
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
     <folder id="0" name="cabbage">
         <file id="0" name="cabbage/cabbage.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="cabbage/cabbage_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1" name="cabbage01">
         <file id="0" name="cabbage01/cabbage01.png" width="205" height="205" pivot_x="0" pivot_y="1"/>
     </folder>
-	
     <entity id="0" name="cabbage">
-        <animation id="0" name="idle" length="1000">
+        <animation id="0" name="cooked" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="cabbage" folder="0" file="0" abs_x="-124" abs_y="166" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="cabbage_cooked" folder="0" file="1" abs_x="-124" abs_y="186" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="cabbage_cooked">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-124" y="186"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="cabbage" folder="0" file="0" abs_x="-124" abs_y="166" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="cabbage">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-124" y="166"/>
+                    <object folder="0" file="0" x="-124" y="166" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -25,12 +37,12 @@
         <animation id="0" name="idle" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="cabbage01" folder="1" file="1" abs_x="-101" abs_y="217" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="cabbage01" folder="1" file="0" abs_x="-101" abs_y="217" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="cabbage01">
                 <key id="0" spin="0">
-                    <object folder="1" file="1" x="-101" y="217"/>
+                    <object folder="1" file="0" x="-101" y="217" angle="0"/>
                 </key>
             </timeline>
         </animation>

@@ -92,7 +92,7 @@ STRINGS.NAMES.CABBAGE = "Cabbage"
 
 -- Randomizes the inspection line upon inspection.
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE = {	
-	"A guy named Cabbage invented the computer... no wait, that was Babbage", 
+	"A guy named Cabbage invented the computer... \nno wait, that was Babbage", 
 	"About as large and wise as a man's head",
 	"I heard that kids hang out around cabbage patches",
 }
