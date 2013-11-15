@@ -121,6 +121,7 @@ local function fn(Sim)
     inst.components.container.widgetanimbank = "ui_chest_3x3"
 	inst.components.container.widgetanimbuild = "ui_chest_3x3"
     inst.components.container.widgetpos = Vector3(200,0,0)
+	inst.components.container.side_align_tip = 100
     inst.components.container.widgetbuttoninfo = widgetbuttoninfo
     inst.components.container.acceptsstacks = false
 
