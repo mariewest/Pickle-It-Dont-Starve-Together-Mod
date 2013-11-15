@@ -33,7 +33,7 @@ local widgetbuttoninfo = {
 }
 
 local function itemtest(inst, item, slot)
-	if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "PICKLED" then
+	if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "GENERIC" then
 		return true
 	end	
 	

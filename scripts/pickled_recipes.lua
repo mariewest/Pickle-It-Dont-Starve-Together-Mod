@@ -59,7 +59,7 @@ function pickleit_CreatePickledPrefab(pickled_data)
 		inst.components.edible.healthvalue = pickled_data.healing
 		inst.components.edible.hungervalue = pickled_data.hunger
 		inst.components.edible.sanityvalue = pickled_data.sanity or 0		
-		inst.components.edible.foodtype = pickled_data.foodtype or "PICKLED"
+		inst.components.edible.foodtype = pickled_data.foodtype or "GENERIC"
 		
 		-- Make it perisable
 		inst:AddComponent("perishable")

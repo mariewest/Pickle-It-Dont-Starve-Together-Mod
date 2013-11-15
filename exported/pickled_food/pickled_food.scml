@@ -2,6 +2,7 @@
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
     <folder id="0" name="pickled_food">
         <file id="0" name="pickled_food/egg_pickled.png" width="128" height="128" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="pickled_food/cucumber_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="egg_pickled">
         <animation id="0" name="idle" length="1000">
@@ -13,6 +14,20 @@
             <timeline id="0" name="egg_pickled">
                 <key id="0" spin="0">
                     <object folder="0" file="0" x="4.051564" y="-1.193723" pivot_x="0.511055" pivot_y="0.039844" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="1" name="cucumber_pickled">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="cucumber_pickled" folder="0" file="1" abs_x="-133" abs_y="180" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="cucumber_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-133" y="180"/>
                 </key>
             </timeline>
         </animation>

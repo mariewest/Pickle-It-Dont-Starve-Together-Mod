@@ -6,7 +6,7 @@ PrefabFiles = {
 	"cabbage_seeds",
 	"cucumber",
 	"cucumber_cooked",
-  --"cucumber_pickled",
+	"cucumber_pickled",
 	"cucumber_seeds",
 	"egg_pickled",
   --"fish_pickled",
