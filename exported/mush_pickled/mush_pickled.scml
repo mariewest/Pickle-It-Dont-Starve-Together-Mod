@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
     <folder id="0" name="mush_pickled">
-        <file id="0" name="mush_pickled/pickled_mush.png" width="128" height="128" pivot_x="0" pivot_y="1"/>
+        <file id="0" name="mush_pickled/mush_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="mush_pickled">
         <animation id="0" name="idle" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="pickled_mush" folder="0" file="0" abs_x="-61" abs_y="116" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="mush_pickled" folder="0" file="0" abs_x="-82" abs_y="157" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="0.7" abs_scale_y="0.7" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
-            <timeline id="0" name="pickled_mush">
+            <timeline id="0" name="mush_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-61" y="116"/>
+                    <object folder="0" file="0" x="-82" y="157" scale_x="0.7" scale_y="0.7"/>
                 </key>
             </timeline>
         </animation>
