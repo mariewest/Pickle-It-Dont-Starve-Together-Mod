@@ -20,6 +20,13 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2013-11-17 - Added pickle barrel
+ - Pickled barrel is craftable on Science Machines
+ - Added cabbage (all functionality of cucumber)
+ - Added pickled recipes for: cabbage, cucumber, egg, fish
+ - Added pickled mush for invalid pickled foods
+ 
+
 2013-11-10 - Added new cucumber vegetable
  - Regular seeds have a chance of producing a cucumber
  - Cucumbers can produce cucumber seeds

@@ -5,16 +5,16 @@ Art by: Sean Closson (seanclosson.com)
 
 ]]--
 name = "Pickle It"
-description = "When you're stuck in a pickle, eat a pickle.\n\nThis mod is a work in progress, pickling coming soon!\n\nArt by: Sean Closson"
+description = "Pickle your foods to make them last longer.\nPickle It adds a pickle barrel, pickled foods, and some new veggies.\n\nArt by: Sean Closson"
 author = "Marie and Nick West"
-version = "0.1"
+version = "1.0"
 
 standalone = false
 restart_required = false
 
 api_version =  4
 
-icon_atlas = "cucumber.xml"
-icon = "cucumber.tex"
+icon_atlas = "mod_icon.xml"
+icon = "mod_icon.tex"
 
-forumthread = "http://forums.kleientertainment.com/index.php?/topic/29559-wip-pickle-it-a-mod-that-lets-you-pickle-things/"
+forumthread = "forums.kleientertainment.com/index.php?/topic/29559-wip-pickle-it-a-mod-that-lets-you-pickle-things/"

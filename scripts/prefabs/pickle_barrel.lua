@@ -189,7 +189,7 @@ STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
 setdescription(false)
 
 -- Add recipe for pickle barrel
-local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 4),Ingredient("goldnugget", 2), Ingredient("wetgoop", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_TWO, "pickle_barrel_placer")
+local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 4),Ingredient("goldnugget", 2), Ingredient("wetgoop", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer")
 crafting_recipe.atlas = "images/inventoryimages/pickle_barrel.xml"
 
 
