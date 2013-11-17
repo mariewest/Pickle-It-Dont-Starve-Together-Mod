@@ -100,6 +100,16 @@ local function donepicklefn(inst)
 	inst.AnimState:PlayAnimation("closed")
 end
 
+local function continuedonefn(inst)
+	setdescription(false)
+	inst.AnimState:PlayAnimation("closed")
+end
+
+local function continuepicklefn(inst)
+	setdescription(true)
+	inst.AnimState:PlayAnimation("full")
+end
+
 local function getstatus(inst)
 	-- if inst.components.stewer.cooking and inst.components.stewer:GetTimeToCook() > 15 then
 		-- return "COOKING_LONG"
@@ -133,8 +143,8 @@ local function fn(Sim)
 	
     inst:AddComponent("pickler")
     inst.components.pickler.onstartpickling = startpicklefn
-    -- inst.components.pickler.oncontinuepickling = continuepicklefn
-	-- inst.components.pickler.oncontinuedone = continuedonefn
+    inst.components.pickler.oncontinuepickling = continuepicklefn
+	inst.components.pickler.oncontinuedone = continuedonefn
     inst.components.pickler.ondonepickling = donepicklefn
     
     inst:AddComponent("container")

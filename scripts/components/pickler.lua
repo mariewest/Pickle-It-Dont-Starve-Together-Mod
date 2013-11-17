@@ -67,14 +67,46 @@ function Pickler:StartPickling()
 				self.onstartpickling(self.inst)
 			end
 			
-			-- Pickling should take 5 days to complete
-			local pickle_time = TUNING.TOTAL_DAY_TIME * 0.03	-- TEMP! Temporarily reduced the time for testing purposes!
+			-- Pickling should take 4 days to complete
+			local pickle_time = TUNING.TOTAL_DAY_TIME * 4
 			self.targettime = GetTime() + pickle_time
-			self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")	-- TEMP! 3rd parameter??
+			self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")
 
 		end
 		
 	end
+end
+
+function Pickler:OnSave()
+    
+    if self.pickling then
+		local data = {}
+		data.pickling = true
+		local time = GetTime()
+		if self.targettime and self.targettime > time then
+			data.time = self.targettime - time
+		end
+		return data
+    end
+end
+
+function Pickler:OnLoad(data)
+
+    if data.pickling then
+		self.product = data.product
+		if self.oncontinuepickling then
+			local time = data.time or 1
+			self.oncontinuepickling(self.inst)
+			self.pickling = true
+			self.targettime = GetTime() + time
+			self.task = self.inst:DoTaskInTime(time, dopickling, "pickle")
+			
+			if self.inst.components.container then		
+				self.inst.components.container.canbeopened = false
+			end
+			
+		end
+    end
 end
 
 -- Determine which pickled loot to drop
