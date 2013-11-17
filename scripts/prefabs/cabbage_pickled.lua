@@ -5,10 +5,10 @@ local pickled_data = {
 	name = 'cabbage_pickled',
 	formatted_name = "Sauerkraut",
 	
-	healing = TUNING.HEALING_TINY,
+	healing = TUNING.HEALING_SMALL,
 	hunger = TUNING.CALORIES_SMALL,
-	sanity = TUNING.SANITY_TINY,
-	perishtime = TUNING.PERISH_SLOW,
+	sanity = -TUNING.SANITY_TINY,
+	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
 	foodtype = "GENERIC",
 	

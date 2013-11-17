@@ -36,7 +36,7 @@ local function fn(Sim)
     MakeSmallPropagator(inst)
     
     inst:AddComponent("edible")
-    inst.components.edible.healthvalue = TUNING.SPOILED_HEALTH*5
+    inst.components.edible.healthvalue = TUNING.SPOILED_HEALTH*4
     inst.components.edible.hungervalue = TUNING.SPOILED_HUNGER*2
     inst.components.edible.sanityvalue = -TUNING.SANITY_MED
 	inst.components.edible.foodtype = "GENERIC"
