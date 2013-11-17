@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
     <folder id="0" name="pickle_barrel">
-        <file id="0" name="pickle_barrel/pickle_barrel.png" width="820" height="820" pivot_x="0" pivot_y="1"/>
+        <file id="0" name="pickle_barrel/pickle_barrel_empty.png" width="384" height="384" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="pickle_barrel/pickle_barrel_closed.png" width="384" height="384" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="pickle_barrel/pickle_barrel_full.png" width="384" height="384" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="pickle_barrel">
-        <animation id="0" name="idle" length="1000">
+        <animation id="0" name="open" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="pickle_barrel" folder="0" file="0" abs_x="-399.999991" abs_y="694.444435" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="pickle_barrel_empty" folder="0" file="0" abs_x="-186" abs_y="210" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
-            <timeline id="0" name="pickle_barrel">
+            <timeline id="0" name="pickle_barrel_empty">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-399.999991" y="694.444435"/>
+                    <object folder="0" file="0" x="-186" y="210" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="closed" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="pickle_barrel_closed" folder="0" file="1" abs_x="-186" abs_y="210" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pickle_barrel_closed">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-186" y="210" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="full" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="pickle_barrel_full" folder="0" file="2" abs_x="-186" abs_y="210" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pickle_barrel_full">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-186" y="210" angle="0"/>
                 </key>
             </timeline>
         </animation>

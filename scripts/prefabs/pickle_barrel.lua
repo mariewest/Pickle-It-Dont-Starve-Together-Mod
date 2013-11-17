@@ -1,5 +1,6 @@
 require "prefabutil"
 require "recipe"
+require "modutil"
 
 local cooking = require("cooking")
 
@@ -61,20 +62,28 @@ end
 local function onopen(inst)
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_open", "open")
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot", "snd")
+	
+	inst.AnimState:PlayAnimation("open")
 end
 
 local function onclose(inst)
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_close", "close")
+	
+	inst.AnimState:PlayAnimation("closed")
 end
 
 local function startpicklefn(inst)
 	-- Change the pickle barrel descriptions to descriptions that indicate the barrel is currently pickling
 	setdescription(true)
+	
+	inst.AnimState:PlayAnimation("full")
 end
 
 local function donepicklefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
+
+	inst.AnimState:PlayAnimation("closed")
 end
 
 local function getstatus(inst)
@@ -98,14 +107,14 @@ local function fn(Sim)
 	inst.entity:AddSoundEmitter()
 	
 	local minimap = inst.entity:AddMiniMapEntity()
-	minimap:SetIcon( "pickle_barrel.png" )
+	minimap:SetIcon( "pickle_barrel.tex" )
     
     inst:AddTag("structure")
     MakeObstaclePhysics(inst, .5)
     
     inst.AnimState:SetBank("pickle_barrel")
     inst.AnimState:SetBuild("pickle_barrel")
-    inst.AnimState:PlayAnimation("idle")    -- idle_empty
+    inst.AnimState:PlayAnimation("closed")
 
 	
     inst:AddComponent("pickler")
@@ -161,4 +170,4 @@ crafting_recipe.atlas = "images/inventoryimages/pickle_barrel.xml"
 
 
 return Prefab( "common/pickle_barrel", fn, assets, prefabs),
-		MakePlacer( "common/pickle_barrel_placer", "pickle_barrel", "pickle_barrel", "idle" ) 
+		MakePlacer( "common/pickle_barrel_placer", "pickle_barrel", "pickle_barrel", "closed" ) 

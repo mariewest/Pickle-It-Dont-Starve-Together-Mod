@@ -13,3 +13,11 @@ PrefabFiles = {
 	"mush_pickled",
 	"pickle_barrel",	
 }
+
+local assets=
+{
+    Asset("ATLAS", "images/inventoryimages/pickle_barrel.xml"),
+    Asset("IMAGE", "images/inventoryimages/pickle_barrel.tex"),
+}
+
+AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
