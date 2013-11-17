@@ -23,8 +23,8 @@ local function MakeVegStats(seedweight, hunger, health, perish_time, sanity, coo
 end
 
 -- Make an injectible instance of our cabbage
-local cabbage = MakeVegStats(3,	TUNING.CALORIES_SMALL,	TUNING.HEALING_TINY,	TUNING.PERISH_MED, 0,		
-									TUNING.CALORIES_SMALL,	TUNING.HEALING_SMALL,	TUNING.PERISH_FAST, 0)
+local cabbage = MakeVegStats(2,	TUNING.CALORIES_MEDSMALL,	TUNING.HEALING_SMALL,	TUNING.PERISH_MED, 0,		
+									TUNING.CALORIES_SMALL,	TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 0)
 
 -- Add it to the global VEGGIES table
 VEGGIES['cabbage'] = cabbage
