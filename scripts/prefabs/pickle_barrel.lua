@@ -9,6 +9,8 @@ local assets=
 	Asset("ANIM", "anim/pickle_barrel.zip"),
     Asset("ATLAS", "images/inventoryimages/pickle_barrel.xml"),
     Asset("IMAGE", "images/inventoryimages/pickle_barrel.tex"),
+	Asset("SOUNDPACKAGE", "sound/pickle_barrel.fev"),
+	Asset("SOUND", "sound/pickle_barrel_bank.fsb"),
 }
 
 local prefabs = {}
@@ -69,21 +71,22 @@ local function setdescription(isPickling)
 end
 
 local function onopen(inst)
-	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_open", "open")
-	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot", "snd")
+	inst.SoundEmitter:PlaySound("pickle_barrel/pickle_barrel/open", "open")
 	
 	inst.AnimState:PlayAnimation("open")
 end
 
 local function onclose(inst)
-	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_close", "close")
-	
+	inst.SoundEmitter:PlaySound("pickle_barrel/pickle_barrel/close", "close")
+
 	inst.AnimState:PlayAnimation("closed")
 end
 
 local function startpicklefn(inst)
 	-- Change the pickle barrel descriptions to descriptions that indicate the barrel is currently pickling
 	setdescription(true)
+	
+	inst.SoundEmitter:PlaySound("pickle_barrel/pickle_barrel/pickling", "pickling")
 	
 	inst.AnimState:PlayAnimation("full")
 end
@@ -92,6 +95,8 @@ local function donepicklefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
 
+	inst.SoundEmitter:KillSound("pickling")
+	
 	inst.AnimState:PlayAnimation("closed")
 end
 
