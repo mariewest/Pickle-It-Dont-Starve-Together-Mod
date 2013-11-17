@@ -12,6 +12,15 @@ local assets=
 }
 
 local prefabs = {}
+
+--  Break the pickle barrel when it is hammered upon
+local function onhammered(inst, worker)
+	inst.components.pickler:CalculateLoot()
+	inst.components.lootdropper:DropLoot()
+	SpawnPrefab("collapse_small").Transform:SetPosition(inst.Transform:GetWorldPosition())
+	inst.SoundEmitter:PlaySound("dontstarve/common/destroy_wood")
+	inst:Remove()
+end
 	
 -- 	Define the positions of the slots
 local slotpos = {}
@@ -147,11 +156,11 @@ local function fn(Sim)
     -- inst.components.playerprox:SetOnPlayerFar(onfar)
 
 
-    -- inst:AddComponent("lootdropper")
-    -- inst:AddComponent("workable")
-    -- inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
-    -- inst.components.workable:SetWorkLeft(4)
-	-- inst.components.workable:SetOnFinishCallback(onhammered)
+    inst:AddComponent("lootdropper")
+    inst:AddComponent("workable")
+    inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
+    inst.components.workable:SetWorkLeft(4)
+	inst.components.workable:SetOnFinishCallback(onhammered)
 	-- inst.components.workable:SetOnWorkCallback(onhit)
 
 	--MakeSnowCovered(inst, .01)    
