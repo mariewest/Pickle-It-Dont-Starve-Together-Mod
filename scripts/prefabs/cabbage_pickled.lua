@@ -6,7 +6,7 @@ local pickled_data = {
 	formatted_name = "Sauerkraut",
 	
 	healing = TUNING.HEALING_SMALL,
-	hunger = TUNING.CALORIES_SMALL,
+	hunger = TUNING.CALORIES_MEDSMALL,
 	sanity = -TUNING.SANITY_TINY,
 	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
