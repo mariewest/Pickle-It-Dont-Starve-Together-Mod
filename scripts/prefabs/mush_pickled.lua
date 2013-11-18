@@ -18,8 +18,8 @@ local function fn(Sim)
     anim:PlayAnimation("idle")
     
     inst:AddComponent("fertilizer")
-    inst.components.fertilizer.fertilizervalue = TUNING.SPOILEDFOOD_FERTILIZE
-    inst.components.fertilizer.soil_cycles = TUNING.SPOILEDFOOD_SOILCYCLES
+    inst.components.fertilizer.fertilizervalue = TUNING.SPOILEDFOOD_FERTILIZE * 2
+    inst.components.fertilizer.soil_cycles = TUNING.SPOILEDFOOD_SOILCYCLES * 2
     
     inst:AddComponent("inspectable")
 

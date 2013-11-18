@@ -5,14 +5,18 @@ PrefabFiles = {
 	"cabbage_pickled",
 	"cabbage_seeds",
 	"carrot_pickled",
+	"corn_pickled",
 	"cucumber",
 	"cucumber_cooked",
 	"cucumber_pickled",
 	"cucumber_seeds",
 	"egg_pickled",
+	"eggplant_pickled",
 	"fish_pickled",
 	"mush_pickled",
-	"pickle_barrel",	
+	"mushroom_pickled",
+	"pickle_barrel",
+	"pumpkin_pickled",
 }
 
 local assets=

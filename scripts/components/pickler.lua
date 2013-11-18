@@ -67,8 +67,8 @@ function Pickler:StartPickling()
 				self.onstartpickling(self.inst)
 			end
 			
-			-- Pickling should take 4 days to complete
-			local pickle_time = TUNING.TOTAL_DAY_TIME * 4
+			-- Pickling should take 3 days to complete
+			local pickle_time = TUNING.TOTAL_DAY_TIME * 3
 			self.targettime = GetTime() + pickle_time
 			self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")
 

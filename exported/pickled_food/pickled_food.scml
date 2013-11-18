@@ -6,6 +6,10 @@
         <file id="2" name="pickled_food/fish_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="3" name="pickled_food/cabbage_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="4" name="pickled_food/carrot_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="pickled_food/mushroom_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="pickled_food/corn_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="pickled_food/eggplant_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="pickled_food/pumpkin_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="egg_pickled">
         <animation id="0" name="idle" length="1000">
@@ -73,6 +77,62 @@
             <timeline id="0" name="carrot_pickled">
                 <key id="0" spin="0">
                     <object folder="0" file="4" x="-128.486381" y="164.501946" pivot_x="-0.013619" pivot_y="0.998054" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="5" name="mushroom_pickled">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="mushroom_pickled" folder="0" file="5" abs_x="-126" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="mushroom_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="5" x="-126" y="161" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="6" name="corn_pickled">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="corn_pickled" folder="0" file="6" abs_x="-127" abs_y="169" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="corn_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="6" x="-127" y="169" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="7" name="eggplant_pickled">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="eggplant_pickled" folder="0" file="7" abs_x="-127" abs_y="153" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="eggplant_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="7" x="-127" y="153"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="8" name="pumpkin_pickled">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="pumpkin_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pumpkin_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="8" x="-127" y="161"/>
                 </key>
             </timeline>
         </animation>
