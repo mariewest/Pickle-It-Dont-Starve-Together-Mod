@@ -20,6 +20,13 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2013-11-18 - Added more pickled food + tweaks
+ - Added pickled recipes for: carrot, corn, eggplant, mushroom, pumpkin
+ - Reduced pickle time to 3 days
+ - Made pickled mush 2x as effective on farm plots
+ - Slowed perish time on food while pickling
+ 
+
 2013-11-17 - Added pickle barrel
  - Pickled barrel is craftable on Science Machines
  - Added cabbage (all functionality of cucumber)
