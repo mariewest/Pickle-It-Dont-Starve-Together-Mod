@@ -88,6 +88,9 @@ local function startpicklefn(inst)
 	-- Change the pickle barrel descriptions to descriptions that indicate the barrel is currently pickling
 	setdescription(true)
 	
+	-- Slow down the time it takes the food to perish
+	inst:AddTag("fridge")
+	
 	inst.SoundEmitter:PlaySound("pickle_barrel/pickle_barrel/pickling", "pickling")
 	
 	inst.AnimState:PlayAnimation("full")
@@ -96,6 +99,9 @@ end
 local function donepicklefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
+	
+	-- Return the time it takes the food to perish to normal
+	inst:RemoveTag("fridge")
 
 	inst.SoundEmitter:KillSound("pickling")
 	
@@ -103,12 +109,22 @@ local function donepicklefn(inst)
 end
 
 local function continuedonefn(inst)
+	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
+	
+	-- Return the time it takes the food to perish to normal
+	inst:RemoveTag("fridge")
+	
 	inst.AnimState:PlayAnimation("closed")
 end
 
 local function continuepicklefn(inst)
+	-- Change the pickle barrel descriptions to descriptions that indicate the barrel is currently pickling
 	setdescription(true)
+	
+	-- Slow down the time it takes the food to perish
+	inst:AddTag("fridge")
+	
 	inst.AnimState:PlayAnimation("full")
 end
 
@@ -171,7 +187,7 @@ local function fn(Sim)
     -- inst:AddComponent("playerprox")
     -- inst.components.playerprox:SetDist(3,5)
     -- inst.components.playerprox:SetOnPlayerFar(onfar)
-
+	
 
     inst:AddComponent("lootdropper")
     inst:AddComponent("workable")
