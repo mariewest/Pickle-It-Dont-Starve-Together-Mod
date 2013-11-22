@@ -1,5 +1,10 @@
 -- Our list of prefab files that this mod includes
 PrefabFiles = {
+	"beet",
+	"beet_cooked",
+	"beet_pickled",
+	"beet_planted",
+	"beet_seeds",
 	"cabbage",
 	"cabbage_cooked",
 	"cabbage_pickled",
@@ -15,8 +20,18 @@ PrefabFiles = {
 	"fish_pickled",
 	"mush_pickled",
 	"mushroom_pickled",
+	"onion",
+	"onion_cooked",
+	"onion_pickled",
+	"onion_planted",
+	"onion_seeds",
 	"pickle_barrel",
 	"pumpkin_pickled",
+	"radish",
+	"radish_cooked",
+	"radish_pickled",
+	"radish_planted",
+	"radish_seeds",
 }
 
 local assets=
