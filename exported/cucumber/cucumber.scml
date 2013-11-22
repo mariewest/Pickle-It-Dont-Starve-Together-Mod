@@ -3,32 +3,45 @@
     <folder id="0" name="cucumber">
         <file id="0" name="cucumber/cucumber.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="1" name="cucumber/cucumber_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="cucumber/pickle_golden.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1" name="cucumber01">
         <file id="0" name="cucumber01/cucumber01.png" width="192" height="192" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="cucumber">
-        <animation id="0" name="idle" length="1000">
+        <animation id="0" name="pickled_gold" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="cucumber" folder="0" file="0" abs_x="-122" abs_y="170" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="pickle_golden" folder="0" file="2" abs_x="-132" abs_y="175" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pickle_golden">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-132" y="175"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="cucumber" folder="0" file="0" abs_x="-122" abs_y="170" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="cucumber">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-122" y="170"/>
+                    <object folder="0" file="0" x="-122" y="170" angle="0"/>
                 </key>
             </timeline>
         </animation>
-        <animation id="1" name="cooked" length="1000">
+        <animation id="2" name="cooked" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="cucumber_cooked" folder="0" file="1" abs_x="-133" abs_y="186" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="cucumber_cooked" folder="0" file="1" abs_x="-133" abs_y="186" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="cucumber_cooked">
                 <key id="0" spin="0">
-                    <object folder="0" file="1" x="-133" y="186"/>
+                    <object folder="0" file="1" x="-133" y="186" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -37,12 +50,12 @@
         <animation id="0" name="idle" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="cucumber01" folder="1" file="0" abs_x="-95" abs_y="246" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="cucumber01" folder="1" file="0" abs_x="-95" abs_y="246" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="cucumber01">
                 <key id="0" spin="0">
-                    <object folder="1" file="0" x="-95" y="246"/>
+                    <object folder="1" file="0" x="-95" y="246" angle="0"/>
                 </key>
             </timeline>
         </animation>
