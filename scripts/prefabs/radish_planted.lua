@@ -42,6 +42,6 @@ local function fn(Sim)
     return inst
 end
 
-STRINGS.NAMES.RADISH = "Radish"
+STRINGS.NAMES.RADISH_PLANTED = "Radish"
 
 return Prefab( "common/inventory/radish_planted", fn, assets) 
