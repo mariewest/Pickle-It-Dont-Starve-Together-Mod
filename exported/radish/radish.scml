@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+    <folder id="0" name="radish">
+        <file id="0" name="radish/radish.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="radish/radish_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="radish/radish_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="radish/radish_planted.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="radish01/radish01.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="radish">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="radish" folder="0" file="0" abs_x="-123" abs_y="164" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="radish">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-123" y="164"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="cooked" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="radish_cooked" folder="0" file="1" abs_x="-118" abs_y="194" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="radish_cooked">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-118" y="194"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="pickled" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="radish_pickled" folder="0" file="2" abs_x="-122" abs_y="200" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="radish_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-122" y="200"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="3" name="planted" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="radish_planted" folder="0" file="3" abs_x="-132" abs_y="166" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="radish_planted">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-132" y="166"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="1" name="radish01">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="radish01" folder="0" file="4" abs_x="-97" abs_y="283" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="0.8" abs_scale_y="0.8" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="radish01">
+                <key id="0" spin="0">
+                    <object folder="0" file="4" x="-97" y="283" scale_x="0.8" scale_y="0.8"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
