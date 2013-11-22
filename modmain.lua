@@ -32,6 +32,9 @@ PrefabFiles = {
 	"radish_pickled",
 	"radish_planted",
 	"radish_seeds",
+	"pigs_foot",
+	"pigs_foot_cooked",
+	"pigs_foot_pickled",
 }
 
 local assets=
@@ -41,3 +44,12 @@ local assets=
 }
 
 AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
+
+-- Add a loot drop to pigmen
+local function AddPigLoot(prefab)
+	prefab.components.lootdropper:AddChanceLoot('pigs_foot',1)
+	prefab.components.lootdropper:AddChanceLoot('pigs_foot',.5)
+end
+
+AddPrefabPostInit("pigman", AddPigLoot)
+AddPrefabPostInit("pigguard", AddPigLoot)
