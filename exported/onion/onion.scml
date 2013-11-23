@@ -5,55 +5,57 @@
         <file id="1" name="onion/onion_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="2" name="onion/onion.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="3" name="onion/onion_planted.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="onion01/onion01.png" width="205" height="205" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1" name="onion01">
-        <file id="0" name="onion01/onion01.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
-    </folder>    <entity id="0" name="onion">
+        <file id="0" name="onion01/onion01.png" width="205" height="205" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="onion">
         <animation id="0" name="idle" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="onion" folder="0" file="2" abs_x="-129" abs_y="182" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="onion" folder="0" file="2" abs_x="-98" abs_y="149" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="0.8" abs_scale_y="0.8" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="onion">
                 <key id="0" spin="0">
-                    <object folder="0" file="2" x="-129" y="182"/>
+                    <object folder="0" file="2" x="-98" y="149" angle="0" scale_x="0.8" scale_y="0.8"/>
                 </key>
             </timeline>
         </animation>
         <animation id="1" name="planted" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="onion_planted" folder="0" file="3" abs_x="-124" abs_y="200" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="onion_planted" folder="0" file="3" abs_x="-124" abs_y="200" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="onion_planted">
                 <key id="0" spin="0">
-                    <object folder="0" file="3" x="-124" y="200"/>
+                    <object folder="0" file="3" x="-124" y="200" angle="0"/>
                 </key>
             </timeline>
         </animation>
         <animation id="2" name="cooked" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="onion_cooked" folder="0" file="1" abs_x="-126" abs_y="173" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="onion_cooked" folder="0" file="1" abs_x="-126" abs_y="173" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="onion_cooked">
                 <key id="0" spin="0">
-                    <object folder="0" file="1" x="-126" y="173"/>
+                    <object folder="0" file="1" x="-126" y="173" angle="0"/>
                 </key>
             </timeline>
         </animation>
         <animation id="3" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="onion_pickled" folder="0" file="0" abs_x="-118" abs_y="190" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="onion_pickled" folder="0" file="0" abs_x="-118" abs_y="190" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="onion_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-118" y="190"/>
+                    <object folder="0" file="0" x="-118" y="190" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -62,12 +64,12 @@
         <animation id="0" name="idle" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="onion01" folder="1" file="0" abs_x="-98" abs_y="258" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="0.8" abs_scale_y="0.8" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="onion01" folder="1" file="0" abs_x="-102" abs_y="256" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="onion01">
                 <key id="0" spin="0">
-                    <object folder="1" file="0" x="-98" y="258" scale_x="0.8" scale_y="0.8"/>
+                    <object folder="1" file="0" x="-102" y="256" angle="0"/>
                 </key>
             </timeline>
         </animation>

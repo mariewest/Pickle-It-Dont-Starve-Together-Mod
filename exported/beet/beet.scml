@@ -13,24 +13,24 @@
         <animation id="0" name="planted" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="beet_planted" folder="0" file="3" abs_x="-131" abs_y="171" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="beet_planted" folder="0" file="3" abs_x="-131" abs_y="171" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="beet_planted">
                 <key id="0" spin="0">
-                    <object folder="0" file="3" x="-131" y="171"/>
+                    <object folder="0" file="3" x="-131" y="171" angle="0"/>
                 </key>
             </timeline>
         </animation>
         <animation id="1" name="cooked" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="beet_cooked" folder="0" file="2" abs_x="-134" abs_y="194" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="beet_cooked" folder="0" file="2" abs_x="-77" abs_y="122" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="0.6" abs_scale_y="0.6" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="beet_cooked">
                 <key id="0" spin="0">
-                    <object folder="0" file="2" x="-134" y="194" angle="0"/>
+                    <object folder="0" file="2" x="-77" y="122" angle="0" scale_x="0.6" scale_y="0.6"/>
                 </key>
             </timeline>
         </animation>
