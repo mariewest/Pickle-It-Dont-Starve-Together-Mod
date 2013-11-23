@@ -54,27 +54,46 @@ local function dopickling(inst)
 	inst.components.container.canbeopened = true
 end
 
-function Pickler:StartPickling()
-	if not self.pickling then
-		if self.inst.components.container then
-		
-			self.pickling = true
-			
-			self.inst.components.container:Close()
-			self.inst.components.container.canbeopened = false
-			
-			if self.onstartpickling then
-				self.onstartpickling(self.inst)
-			end
-			
-			-- Pickling should take 3 days to complete
-			local pickle_time = TUNING.TOTAL_DAY_TIME * 3
-			self.targettime = GetTime() + pickle_time
-			self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")
+function Pickler:StartPickling( time )
+	self:StopPickling()
 
+	if self.inst.components.container then
+	
+		self.pickling = true
+		
+		self.inst.components.container:Close()
+		self.inst.components.container.canbeopened = false
+		
+		-- if this function is called with time set, then its assumed that we are continuing pickling
+		if not time and self.onstartpickling then
+			self.onstartpickling(self.inst)
+		elseif time and self.oncontinuepickling then
+			self.oncontinuepickling(self.inst)
 		end
 		
+		-- Pickling should take 3 days to complete
+		local pickle_time = time or TUNING.TOTAL_DAY_TIME * 3
+		self.targettime = GetTime() + pickle_time
+		self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")
+
 	end
+end
+
+function Pickler:StopPickling()
+	if self.task then
+		self.task:Cancel()
+		self.task = nil
+	end
+	self.targettime = nil
+	self.pickling = false
+end
+
+function Pickler:TimeLeft()
+	return self.pickling and (self.targettime - GetTime()) or 0
+end
+
+function Pickler:LongUpdate( dt )
+	self:StartPickling( self:TimeLeft() - dt )
 end
 
 function Pickler:OnSave()
@@ -93,18 +112,8 @@ end
 function Pickler:OnLoad(data)
 
     if data.pickling then
-		if self.oncontinuepickling then
-			local time = data.time or 1
-			self.oncontinuepickling(self.inst)
-			self.pickling = true
-			self.targettime = GetTime() + time
-			self.task = self.inst:DoTaskInTime(time, dopickling, "pickle")
-			
-			if self.inst.components.container then		
-				self.inst.components.container.canbeopened = false
-			end
-			
-		end
+		local time = data.time or 1
+		self:StartPickling( time )
     end
 end
 
@@ -142,6 +151,13 @@ function Pickler:CalculateLoot()
 	end
 	
 	self.inst.components.lootdropper:SetLoot(loot)
+end
+
+function Pickler:GetDebugString()
+	local str = ""
+	if self.pickling then str = str.." pickling, time left="..self:TimeLeft()
+	else str = str.." not pickling" end
+	return str
 end
 
 return Pickler
