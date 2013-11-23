@@ -23,7 +23,7 @@ local function MakeVegStats(seedweight, hunger, health, perish_time, sanity, coo
 end
 
 -- Make an injectible instance of our onion
-local onion = MakeVegStats(2,	TUNING.CALORIES_SMALL,	0,	TUNING.PERISH_MED, 0,		
+local onion = MakeVegStats(1,	TUNING.CALORIES_SMALL,	0,	TUNING.PERISH_MED, 0,		
 									TUNING.CALORIES_SMALL,	TUNING.HEALING_SMALL,	TUNING.PERISH_FAST, 0)
 
 -- Add it to the global VEGGIES table

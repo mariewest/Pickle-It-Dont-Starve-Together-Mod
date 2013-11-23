@@ -23,7 +23,7 @@ local function MakeVegStats(seedweight, hunger, health, perish_time, sanity, coo
 end
 
 -- Make an injectible instance of our beet
-local beet = MakeVegStats(2,	TUNING.CALORIES_SMALL,	TUNING.HEALING_TINY,	TUNING.PERISH_MED, 0,		
+local beet = MakeVegStats(.5,	TUNING.CALORIES_SMALL,	TUNING.HEALING_TINY,	TUNING.PERISH_MED, 0,		
 								TUNING.CALORIES_SMALL,	TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 0)
 
 -- Add it to the global VEGGIES table
