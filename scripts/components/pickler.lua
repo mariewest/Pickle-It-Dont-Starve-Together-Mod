@@ -2,7 +2,12 @@ require "tuning"
 
 local Pickler = Class(function(self, inst)
     self.inst = inst
-    self.pickling = false
+
+    self.targettime = nil
+    self.task = nil
+
+	-- Pickling should take 3 days to complete
+    self.pickle_time = TUNING.TOTAL_DAY_TIME * 3
     
     -- self.product = nil
     -- self.product_spoilage = nil
@@ -41,42 +46,37 @@ local function pickleallitems(inst)
 end
 
 local function dopickling(inst)
-	pickleallitems(inst)
-	
-	inst.components.pickler.task = nil
-	
-	if inst.components.pickler.ondonepickling then
-		inst.components.pickler.ondonepickling(inst)
+	inst.components.pickler:Pickle()
+end
+
+function Pickler:Pickle()
+	self:StopPickling()
+
+	pickleallitems(self.inst)
+
+	if self.ondonepickling then
+		self.ondonepickling(self.inst)
 	end
-	
-	inst.components.pickler.pickling = false
-	
-	inst.components.container.canbeopened = true
 end
 
 function Pickler:StartPickling( time )
 	self:StopPickling()
-
-	if self.inst.components.container then
-	
-		self.pickling = true
 		
+	if self.inst.components.container then
 		self.inst.components.container:Close()
 		self.inst.components.container.canbeopened = false
-		
-		-- if this function is called with time set, then its assumed that we are continuing pickling
-		if not time and self.onstartpickling then
-			self.onstartpickling(self.inst)
-		elseif time and self.oncontinuepickling then
-			self.oncontinuepickling(self.inst)
-		end
-		
-		-- Pickling should take 3 days to complete
-		local pickle_time = time or TUNING.TOTAL_DAY_TIME * 3
-		self.targettime = GetTime() + pickle_time
-		self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")
-
 	end
+		
+	-- if this function is called with time set, then its assumed that we are continuing pickling
+	if not time and self.onstartpickling then
+		self.onstartpickling(self.inst)
+	elseif time and self.oncontinuepickling then
+		self.oncontinuepickling(self.inst)
+	end
+	
+	local pickle_time = time or self.pickle_time
+	self.targettime = GetTime() + pickle_time
+	self.task = self.inst:DoTaskInTime(pickle_time, dopickling, "pickle")
 end
 
 function Pickler:StopPickling()
@@ -85,11 +85,18 @@ function Pickler:StopPickling()
 		self.task = nil
 	end
 	self.targettime = nil
-	self.pickling = false
+
+	if self.inst.components.container then
+		self.inst.components.container.canbeopened = true
+	end
+end
+
+function Pickler:Pickling()
+	return self.targettime ~= nil
 end
 
 function Pickler:TimeLeft()
-	return self.pickling and (self.targettime - GetTime()) or 0
+	return self:Pickling() and (self.targettime - GetTime()) or 0
 end
 
 function Pickler:LongUpdate( dt )
@@ -97,21 +104,18 @@ function Pickler:LongUpdate( dt )
 end
 
 function Pickler:OnSave()
-    
-    if self.pickling then
+    if self:Pickling() then
 		local data = {}
-		data.pickling = true
-		local time = GetTime()
-		if self.targettime and self.targettime > time then
-			data.time = self.targettime - time
+		local timeleft = self:TimeLeft()
+		if timeleft > 0 then
+			data.time = timeleft
 		end
 		return data
     end
 end
 
 function Pickler:OnLoad(data)
-
-    if data.pickling then
+    if data then
 		local time = data.time or 1
 		self:StartPickling( time )
     end
@@ -121,7 +125,7 @@ end
 function Pickler:CalculateLoot()
 	local loot = {}
 	
-	if self.pickling then
+	if self:Pickling() then
 		for k,v in pairs (self.inst.components.container.slots) do			
 			
 			local rnd = math.random() * 100	
@@ -155,7 +159,7 @@ end
 
 function Pickler:GetDebugString()
 	local str = ""
-	if self.pickling then str = str.." pickling, time left="..self:TimeLeft()
+	if self:Pickling() then str = str.." pickling, time left="..self:TimeLeft()
 	else str = str.." not pickling" end
 	return str
 end
