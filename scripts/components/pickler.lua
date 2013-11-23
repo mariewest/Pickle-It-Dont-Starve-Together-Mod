@@ -93,7 +93,6 @@ end
 function Pickler:OnLoad(data)
 
     if data.pickling then
-		self.product = data.product
 		if self.oncontinuepickling then
 			local time = data.time or 1
 			self.oncontinuepickling(self.inst)
