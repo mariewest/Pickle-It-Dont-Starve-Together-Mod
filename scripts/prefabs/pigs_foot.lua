@@ -61,9 +61,11 @@ local function fn(Sim)
 	inst.components.cookable.product = "pigs_foot_cooked" -- This is what it becomes when cooked
 	
 	-- Can be dried
+	--[[
 	inst:AddComponent("dryable")
     inst.components.dryable:SetProduct("smallmeat_dried")
     inst.components.dryable:SetDryTime(TUNING.DRY_FAST)
+	--]]
 	
 	return inst
 end
