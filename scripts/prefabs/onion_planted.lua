@@ -44,4 +44,9 @@ end
 
 STRINGS.NAMES.ONION_PLANTED = "Onion"
 
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_PLANTED = {	
+	"Look, a wild onion!",
+}
+
 return Prefab( "common/inventory/onion_planted", fn, assets) 

@@ -95,6 +95,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET = {
 	"Fact: bears eat beets. Bears, beets, Battlestar Galactica",
 	"Nobody likes beets. Maybe I should have grown candy instead.",
 	"Let's have a garden party.\nLettuce turnip the beet.",
+	"I can pickle that!",
 }
 
 -- List of prefabs [I'm unclear why these are needed here, but veggies.lua provides them this way]
@@ -106,7 +107,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"beet"}, {fruit=1}, true)
+AddIngredientValues({"beet"}, {veggie=1}, true)
 
 -- Return our prefabbed beet
 return Prefab( "common/inventory/beet", fn, assets, prefabs)

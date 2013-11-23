@@ -44,4 +44,9 @@ end
 
 STRINGS.NAMES.RADISH_PLANTED = "Radish"
 
+-- Randomizes the inspection line upon inspection.
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_PLANTED = {	
+	"It's a little wild radish",
+}
+
 return Prefab( "common/inventory/radish_planted", fn, assets) 

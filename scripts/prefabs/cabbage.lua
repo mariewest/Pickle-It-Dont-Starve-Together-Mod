@@ -95,6 +95,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE = {
 	"A guy named Cabbage invented the computer... \nno wait, that was Babbage", 
 	"About as large and wise as a man's head",
 	"I heard that kids hang out around cabbage patches",
+	"I can pickle that!",
 }
 
 -- List of prefabs [I'm unclear why these are needed here, but veggies.lua provides them this way]
@@ -106,7 +107,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"cabbage"}, {fruit=1}, true)
+AddIngredientValues({"cabbage"}, {veggie=1}, true)
 
 -- Return our prefabbed cabbage
 return Prefab( "common/inventory/cabbage", fn, assets, prefabs)

@@ -94,6 +94,7 @@ STRINGS.NAMES.RADISH = "Radish"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH = {	
 	"What is small, red, and whispers?\nA hoarse radish!",
 	"This veggie is so rad(ish)",
+	"I can pickle that!",
 }
 
 -- List of prefabs [I'm unclear why these are needed here, but veggies.lua provides them this way]
@@ -105,7 +106,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"radish"}, {fruit=1}, true)
+AddIngredientValues({"radish"}, {veggie=0.5}, true)
 
 -- Return our prefabbed radish
 return Prefab( "common/inventory/radish", fn, assets, prefabs)

@@ -96,6 +96,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER = {
 	"I bet this would make a fine pickle", 
 	"Cool as a cucumber",
 	"I shall call him Larry",
+	"I can pickle that!",
 }
 
 -- List of prefabs [I'm unclear why these are needed here, but veggies.lua provides them this way]
@@ -107,7 +108,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"cucumber"}, {fruit=1}, true)
+AddIngredientValues({"cucumber"}, {veggie=0.5}, true)
 
 -- Return our prefabbed cucumber
 return Prefab( "common/inventory/cucumber", fn, assets, prefabs)

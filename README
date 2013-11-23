@@ -20,6 +20,15 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2013-11-22 - Added more vegetables and pigs feet
+ - Added new vegetables: beet, onion, radish
+ - Added cooked, pickled, and seed versions for all new vegetables
+ - New vegetables have same functionality as cabbage and cucumber
+ - New vegetables grow wild in the world
+ - Added pigs feet, cooked pigs feet, and pickled pigs feet
+ - Pigs drop 1-2 pigs feet upon death
+ 
+ 
 2013-11-18 - Added more pickled food + tweaks
  - Added pickled recipes for: carrot, corn, eggplant, mushroom, pumpkin
  - Reduced pickle time to 3 days

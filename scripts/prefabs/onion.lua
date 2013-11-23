@@ -95,6 +95,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION = {
 	"*Sob* Who's cutting onions?",
 	"Ogres are like onions",
 	"Onions always make me cry",
+	"I can pickle that!",
 }
 
 -- List of prefabs [I'm unclear why these are needed here, but veggies.lua provides them this way]
@@ -106,7 +107,7 @@ local prefabs =
 }    
 
 -- Make it so this can go in the cook_pot
-AddIngredientValues({"onion"}, {fruit=1}, true)
+AddIngredientValues({"onion"}, {veggie=1}, true)
 
 -- Return our prefabbed onion
 return Prefab( "common/inventory/onion", fn, assets, prefabs)
