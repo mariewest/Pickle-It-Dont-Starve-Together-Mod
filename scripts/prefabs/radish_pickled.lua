@@ -6,7 +6,7 @@ local pickled_data = {
 	formatted_name = "Pickled Radish",
 	
 	healing = TUNING.HEALING_TINY,
-	hunger = TUNING.CALORIES_SMALL,
+	hunger = TUNING.CALORIES_TINY,
 	sanity = -TUNING.SANITY_TINY,
 	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,

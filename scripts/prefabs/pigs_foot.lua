@@ -21,7 +21,7 @@ local function fn(Sim)
 	
 	-- Make it edible
 	inst:AddComponent("edible")
-	inst.components.edible.healthvalue = TUNING.HEALING_TINY	-- Amount to heal
+	inst.components.edible.healthvalue = 0						-- Amount to heal
 	inst.components.edible.hungervalue = TUNING.CALORIES_SMALL	-- Amount to fill belly
 	inst.components.edible.sanityvalue = -TUNING.SANITY_SMALL	-- Amount to help Sanity
 	inst.components.edible.ismeat = true    

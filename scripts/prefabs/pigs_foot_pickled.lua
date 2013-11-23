@@ -5,9 +5,9 @@ local pickled_data = {
 	name = 'pigs_foot_pickled',
 	formatted_name = "Pickled Pigs Foot",
 	
-	healing = TUNING.HEALING_TINY,
-	hunger = TUNING.CALORIES_MEDSMALL,
-	sanity = -TUNING.SANITY_SMALL,
+	healing = TUNING.HEALING_SMALL,
+	hunger = TUNING.CALORIES_MEDSMALL*2,
+	sanity = -TUNING.SANITY_MED,
 	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
 	foodtype = "GENERIC",

@@ -27,9 +27,9 @@ local function fn_cooked(Sim)
 	
 	-- Make it edible
 	inst:AddComponent("edible")
-	inst.components.edible.healthvalue = TUNING.HEALING_MED
-	inst.components.edible.hungervalue = TUNING.CALORIES_SMALL
-	inst.components.edible.sanityvalue = 0
+	inst.components.edible.healthvalue = TUNING.HEALING_SMALL
+	inst.components.edible.hungervalue = TUNING.CALORIES_TINY
+	inst.components.edible.sanityvalue = TUNING.SANITY_TINY
 	inst.components.edible.foodtype = "VEGGIE"
 	
 	-- Make it stackable

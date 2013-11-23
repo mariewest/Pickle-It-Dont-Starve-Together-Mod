@@ -23,7 +23,7 @@ local function MakeVegStats(seedweight, hunger, health, perish_time, sanity, coo
 end
 
 -- Make an injectible instance of our radish
-local radish = MakeVegStats(2,	TUNING.CALORIES_MEDSMALL,	TUNING.HEALING_SMALL,	TUNING.PERISH_MED, 0,		
+local radish = MakeVegStats(2,	TUNING.CALORIES_TINY,	TUNING.HEALING_TINY,	TUNING.PERISH_MED, 0,		
 								TUNING.CALORIES_SMALL,	TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 0)
 
 -- Add it to the global VEGGIES table
@@ -48,7 +48,7 @@ local function fn(Sim)
 	-- Make it edible
 	inst:AddComponent("edible")
 	inst.components.edible.healthvalue = TUNING.HEALING_TINY	-- Amount to heal
-	inst.components.edible.hungervalue = TUNING.CALORIES_SMALL	-- Amount to fill belly
+	inst.components.edible.hungervalue = TUNING.CALORIES_TINY	-- Amount to fill belly
 	inst.components.edible.sanityvalue = 0						-- Amount to help Sanity
 	inst.components.edible.foodtype = "VEGGIE"					-- The type of food
 	

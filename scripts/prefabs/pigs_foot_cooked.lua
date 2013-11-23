@@ -23,7 +23,7 @@ local function fn(Sim)
 	inst:AddComponent("edible")
 	inst.components.edible.healthvalue = TUNING.HEALING_SMALL	-- Amount to heal
 	inst.components.edible.hungervalue = TUNING.CALORIES_MED	-- Amount to fill belly
-	inst.components.edible.sanityvalue = TUNING.SANITY_SMALL	-- Amount to help Sanity
+	inst.components.edible.sanityvalue = 0						-- Amount to help Sanity
 	inst.components.edible.ismeat = true    
 	inst.components.edible.foodtype = "MEAT"					-- The type of food
 	

@@ -6,7 +6,7 @@ local pickled_data = {
 	formatted_name = "Pickled Pumpkin",
 	
 	healing = TUNING.HEALING_SMALL,
-	hunger = TUNING.CALORIES_MEDSMALL,
+	hunger = TUNING.CALORIES_MED,
 	sanity = -TUNING.SANITY_TINY,
 	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,

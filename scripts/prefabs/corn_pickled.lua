@@ -5,7 +5,7 @@ local pickled_data = {
 	name = 'corn_pickled',
 	formatted_name = "Pickled Corn",
 	
-	healing = TUNING.HEALING_SMALL,
+	healing = TUNING.HEALING_TINY,
 	hunger = TUNING.CALORIES_MEDSMALL,
 	sanity = -TUNING.SANITY_TINY,
 	perishtime = TUNING.PERISH_PRESERVED,
