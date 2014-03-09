@@ -45,7 +45,7 @@ end
 STRINGS.NAMES.RADISH_PLANTED = "Radish"
 
 -- Randomizes the inspection line upon inspection.
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_PLANTED = {	
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_PLANTED = {	
 	"It's a little wild radish",
 }
 

@@ -28,6 +28,9 @@ local pickled_data = {
 	source = 'bird_egg',
 }
 
+-- Let tallbird eggs get pickled, too
+pickleit_AddRecipe("tallbirdegg", pickled_data.name)
+
 STRINGS.NAMES.EGG_PICKLED = "Pickled Egg"
 
 -- Randomizes the inspection line upon inspection.
