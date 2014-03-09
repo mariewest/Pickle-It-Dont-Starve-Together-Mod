@@ -12,7 +12,7 @@ version = "1.0"
 standalone = false
 restart_required = false
 
-api_version =  4
+api_version =  5
 
 icon_atlas = "mod_icon.xml"
 icon = "mod_icon.tex"
