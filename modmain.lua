@@ -45,10 +45,16 @@ local assets=
 
 AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
 
--- Add a loot drop to pigmen
-local function AddPigLoot(prefab)
+local function AddPigLootInternal(prefab)
 	prefab.components.lootdropper:AddChanceLoot('pigs_foot',1)
 	prefab.components.lootdropper:AddChanceLoot('pigs_foot',.5)
+end
+
+-- Add a loot drop to pigmen
+local function AddPigLoot(prefab)
+	AddPigLootInternal(prefab)
+	prefab:ListenForEvent("transformwere", AddPigLootInternal)
+	prefab:ListenForEvent("transformnormal", AddPigLootInternal)
 end
 
 AddPrefabPostInit("pigman", AddPigLoot)
