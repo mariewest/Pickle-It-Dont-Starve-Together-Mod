@@ -5,9 +5,9 @@ local pickled_data = {
 	name = 'egg_pickled',
 	formatted_name = "Pickled Egg",
 	
-	healing = TUNING.HEALING_TINY,
+	healing = TUNING.HEALING_SMALL,
 	hunger = TUNING.CALORIES_SMALL,
-	sanity = -TUNING.SANITY_TINY,
+	sanity = 0,
 	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
 	foodtype = "GENERIC",

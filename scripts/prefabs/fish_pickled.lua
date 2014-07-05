@@ -5,10 +5,10 @@ local pickled_data = {
 	name = 'fish_pickled',
 	formatted_name = "Pickled Herring",
 	
-	healing = -TUNING.HEALING_TINY,
+	healing = TUNING.HEALING_TINY,
 	hunger = TUNING.CALORIES_MEDSMALL,
-	sanity = -TUNING.SANITY_SMALL,
-	perishtime = TUNING.PERISH_SLOW,
+	sanity = -TUNING.SANITY_SUPERTINY,
+	perishtime = TUNING.PERISH_PRESERVED,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
 	foodtype = "GENERIC",
 	

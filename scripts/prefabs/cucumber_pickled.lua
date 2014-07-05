@@ -8,7 +8,7 @@ local pickled_data = {
 	healing = TUNING.HEALING_TINY,
 	hunger = TUNING.CALORIES_SMALL,
 	sanity = TUNING.SANITY_TINY,
-	perishtime = TUNING.PERISH_PRESERVED,
+	perishtime = TUNING.PERISH_SUPERSLOW,
 	stack_size = TUNING.STACK_SIZE_SMALLITEM,
 	foodtype = "GENERIC",
 	
