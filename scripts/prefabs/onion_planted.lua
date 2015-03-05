@@ -16,15 +16,20 @@ end
 local function fn(Sim)
     --Onion you eat is defined in onion.lua
 	local inst = CreateEntity()
+
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
 	inst.entity:AddSoundEmitter()
+    inst.entity:AddNetwork()
    
     inst.AnimState:SetBank("onion")
     inst.AnimState:SetBuild("onion")
     inst.AnimState:PlayAnimation("planted")
     inst.AnimState:SetRayTestOnBB(true);
-    
+ 
+    if not TheWorld.ismastersim then
+        return inst
+    end      
 
     inst:AddComponent("inspectable")
     

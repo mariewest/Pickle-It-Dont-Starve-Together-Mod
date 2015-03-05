@@ -16,15 +16,20 @@ end
 local function fn(Sim)
     --Radish you eat is defined in radish.lua
 	local inst = CreateEntity()
+
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
 	inst.entity:AddSoundEmitter()
+    inst.entity:AddNetwork()
    
     inst.AnimState:SetBank("radish")
     inst.AnimState:SetBuild("radish")
     inst.AnimState:PlayAnimation("planted")
     inst.AnimState:SetRayTestOnBB(true);
-    
+
+    if not TheWorld.ismastersim then
+        return inst
+    end   
 
     inst:AddComponent("inspectable")
     
