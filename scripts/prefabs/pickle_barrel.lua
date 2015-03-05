@@ -32,6 +32,44 @@ for y = 2, 1, -1 do
 	end
 end
 
+local function itemtest(inst, item, slot)
+	if item.components.edible ~= nil then
+		if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "GENERIC" then
+			return true
+		end	
+	end
+	
+	return false
+end
+
+local pickle_barrel = 
+{
+	widget = 
+	{
+		slotpos = slotpos,
+		animbank = "ui_chest_3x3",
+		animbuild = "ui_chest_3x3",
+		pos = Vector3(200,0,0),
+		side_align_tip = 100,
+		buttoninfo  =
+		{
+			text = "Pickle",
+			position = Vector3(0, -80, 0),
+			fn = function(inst)
+				inst.components.pickler:StartPickling()
+			end,
+			
+			validfn = function(inst)
+				return inst.components.pickler:CanPickle()
+			end,
+		}
+
+	},
+	acceptsstacks = false,
+	type = "cooker",
+	itemtestfn = itemtest,
+}
+
 local widgetbuttoninfo = {
 	text = "Pickle",
 	position = Vector3(0, -80, 0),
@@ -44,15 +82,6 @@ local widgetbuttoninfo = {
 	end,
 }
 
-local function itemtest(inst, item, slot)
-	if item.components.edible ~= nil then
-		if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "GENERIC" then
-			return true
-		end	
-	end
-	
-	return false
-end
 
 -- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.
 local function setdescription(isPickling)
@@ -82,6 +111,11 @@ local function onclose(inst)
 	inst.SoundEmitter:PlaySound("pickle_barrel/pickle_barrel/close", "close")
 
 	inst.AnimState:PlayAnimation("closed")
+end
+
+local function onbuilt(inst)
+	inst.AnimState:PlayAnimation("place")
+	inst.AnimState:PushAnimation("closed", false)
 end
 
 local function startpicklefn(inst)
@@ -166,16 +200,7 @@ local function fn(Sim)
     inst.components.pickler.ondonepickling = donepicklefn
     
     inst:AddComponent("container")
-    inst.components.container.itemtestfn = itemtest
-    inst.components.container:SetNumSlots(6)
-    inst.components.container.widgetslotpos = slotpos
-    inst.components.container.widgetanimbank = "ui_chest_3x3"
-	inst.components.container.widgetanimbuild = "ui_chest_3x3"
-    inst.components.container.widgetpos = Vector3(200,0,0)
-	inst.components.container.side_align_tip = 100
-    inst.components.container.widgetbuttoninfo = widgetbuttoninfo
-    inst.components.container.acceptsstacks = false
-
+    inst.components.container:WidgetSetup("pickle_barrel", pickle_barrel)
     inst.components.container.onopenfn = onopen
     inst.components.container.onclosefn = onclose
 
