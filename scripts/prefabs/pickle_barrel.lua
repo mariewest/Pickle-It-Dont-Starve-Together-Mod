@@ -86,18 +86,9 @@ local widgetbuttoninfo = {
 -- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.
 local function setdescription(isPickling)
 	if isPickling == true then
-		STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
-			"It takes a while for things to pickle", 
-			"This pickling sure takes a while", 
-			"I'm stuck in a pickle until my food is done pickling",
-		}
+		STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_PICKLING 
 	else
-		STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = {	
-			"Pickled foods last a long time, right?", 
-			"Mmm, salty goodness", 
-			"Not to be confused with pickleball",
-			"Serves sandwiches, right?",
-		}
+		STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_GENERIC
 	end
 end
 
@@ -225,8 +216,6 @@ local function fn(Sim)
 	--inst:ListenForEvent("onbuilt", onbuilt)
     return inst
 end
-
-STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
 
 -- Set the pickle barrel description to default values (description changes when pickling)
 setdescription(false)

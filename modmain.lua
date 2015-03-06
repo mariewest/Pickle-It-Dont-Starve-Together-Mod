@@ -26,6 +26,9 @@ local assets=
 
 AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
 
+local require = GLOBAL.require
+require "pickleit_strings"
+
 local function AddPigLootInternal(prefab)
 	prefab.components.lootdropper:AddChanceLoot('pigs_foot',1)
 	prefab.components.lootdropper:AddChanceLoot('pigs_foot',.5)
