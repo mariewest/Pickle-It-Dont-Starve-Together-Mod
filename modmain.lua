@@ -1,21 +1,14 @@
 -- Our list of prefab files that this mod includes
 PrefabFiles = {
-	"beet_planted",
-	"carrot_pickled",
-	"corn_pickled",
-	"egg_pickled",
-	"eggplant_pickled",
-	"fish_pickled",
-	"mush_pickled",
-	"mushroom_pickled",
-	"onion_planted",
+	"pickleit_veggies",
+	"pickled_foods",
+	"world_plants",
+
 	"pickle_barrel",
-	"pumpkin_pickled",
-	"radish_planted",
+	"mush_pickled",
+
 	"pigs_foot",
 	"pigs_foot_cooked",
-	"pigs_foot_pickled",
-	"pickleitveggies",
 }
 
 local assets=
@@ -24,10 +17,10 @@ local assets=
     Asset("IMAGE", "images/inventoryimages/pickle_barrel.tex"),
 }
 
-AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
-
 local require = GLOBAL.require
 require "pickleit_strings"
+
+AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
 
 local function AddPigLootInternal(prefab)
 	prefab.components.lootdropper:AddChanceLoot('pigs_foot',1)
