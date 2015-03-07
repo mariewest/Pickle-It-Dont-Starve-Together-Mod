@@ -14,11 +14,14 @@ standalone = false
 restart_required = false
 
 -- Compatible with both the base game and reign of giants
-dont_starve_compatible = true
-reign_of_giants_compatible = true
+dont_starve_compatible = false
+reign_of_giants_compatible = false
+dst_compatible = true
 
 api_version =  10
 
 icon_atlas = "mod_icon.xml"
 icon = "mod_icon.tex"
 
+all_clients_require_mod = true
+client_only_mod = false

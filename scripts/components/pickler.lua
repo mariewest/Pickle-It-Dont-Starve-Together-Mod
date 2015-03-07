@@ -15,7 +15,7 @@ function Pickler:CanPickle()
 	for k,v in pairs (self.inst.components.container.slots) do
 		num = num + 1 
 	end
-	return num >= 1
+	return num >= 1 and not self.inst.components.pickler:Pickling()
 end
 
 -- Pickle all the items
