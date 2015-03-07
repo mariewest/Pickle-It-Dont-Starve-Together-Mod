@@ -116,7 +116,7 @@ for foodname,fooddata in pairs(PICKLED_FOODS) do
 	table.insert(prefs, pickled)
 
 	-- Add the recipe
-	pickleit_AddRecipe(fooddata.source or foodname, foodname)
+	pickleit_AddRecipe((fooddata.source or foodname), foodname.."_pickled")
 end
 
 -- Two random addition recipes to add

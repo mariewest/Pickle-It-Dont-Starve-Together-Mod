@@ -183,6 +183,9 @@ local function fn(Sim)
     inst.AnimState:SetBuild("pickle_barrel")
     inst.AnimState:PlayAnimation("closed")
 
+    if not TheWorld.ismastersim then
+        return inst
+    end
 	
     inst:AddComponent("pickler")
     inst.components.pickler.onstartpickling = startpicklefn
@@ -218,7 +221,7 @@ local function fn(Sim)
 end
 
 -- Set the pickle barrel description to default values (description changes when pickling)
-setdescription(false)
+--setdescription(false)
 
 -- Add recipe for pickle barrel
 local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer")

@@ -63,7 +63,9 @@ function Pickler:StartPickling( time )
 	self:StopPickling()
 		
 	if self.inst.components.container then
-		self.inst.components.container:Close()
+		if self.inst.components.container:IsOpen() then
+			self.inst.components.container:Close()
+		end
 		self.inst.components.container.canbeopened = false
 	end
 		
@@ -100,7 +102,9 @@ function Pickler:TimeLeft()
 end
 
 function Pickler:LongUpdate( dt )
-	self:StartPickling( self:TimeLeft() - dt )
+	if(self:Pickling()) then
+		self:StartPickling( self:TimeLeft() - dt )
+	end
 end
 
 function Pickler:OnSave()
