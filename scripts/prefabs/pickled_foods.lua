@@ -59,15 +59,9 @@ local function MakePickledFood(name)
 
 		MakeInventoryPhysics(inst)
 		
-		if name == "carrot" then
-			inst.AnimState:SetBank("carrot_pickled")
-			inst.AnimState:SetBuild("pickled_food")
-			inst.AnimState:PlayAnimation('idle')
-		else
-			inst.AnimState:SetBank(name)
-			inst.AnimState:SetBuild(name)
-			inst.AnimState:PlayAnimation('pickled')
-		end
+		inst.AnimState:SetBank(name.."_pickled")
+		inst.AnimState:SetBuild("pickled_food")
+		inst.AnimState:PlayAnimation('pickled')
 	
         if not TheWorld.ismastersim then
             return inst
@@ -120,8 +114,8 @@ for foodname,fooddata in pairs(PICKLED_FOODS) do
 end
 
 -- Two random addition recipes to add
-pickleit_AddRecipe("green_cap", "mushroom")
-pickleit_AddRecipe("blue_cap", "mushroom")
+pickleit_AddRecipe("green_cap", "mushroom_pickled")
+pickleit_AddRecipe("blue_cap", "mushroom_pickled")
 
 
 
