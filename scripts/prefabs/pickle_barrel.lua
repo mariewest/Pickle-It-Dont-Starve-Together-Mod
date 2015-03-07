@@ -23,7 +23,7 @@ local function onhammered(inst, worker)
 	inst.SoundEmitter:PlaySound("dontstarve/common/destroy_wood")
 	inst:Remove()
 end
-	
+
 -- 	Define the positions of the slots
 local slotpos = {}
 for y = 2, 1, -1 do
@@ -69,19 +69,6 @@ local pickle_barrel =
 	type = "cooker",
 	itemtestfn = itemtest,
 }
-
-local widgetbuttoninfo = {
-	text = "Pickle",
-	position = Vector3(0, -80, 0),
-	fn = function(inst)
-		inst.components.pickler:StartPickling()
-	end,
-	
-	validfn = function(inst)
-		return inst.components.pickler:CanPickle()
-	end,
-}
-
 
 -- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.
 local function setdescription(isPickling)

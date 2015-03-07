@@ -1,13 +1,13 @@
 -- Pickle Barrel
 
 STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
+ACTIONS.PICKLE = "Pickle"
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_PICKLING = {	
 	"It takes a while for things to pickle", 
 	"This pickling sure takes a while", 
 	"I'm stuck in a pickle until my food is done pickling",
 }
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_GENERIC = {	
 	"Pickled foods last a long time, right?", 
 	"Mmm, salty goodness", 
