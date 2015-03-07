@@ -1,4 +1,5 @@
 require "tuning"
+require "cooking"
 
 local function MakeVegStats(seedweight, hunger, health, perish_time, sanity, cooked_hunger, cooked_health, cooked_perish_time, cooked_sanity)
 	return {
@@ -31,6 +32,10 @@ PICKLEITVEGGIES =
 	radish = MakeVegStats(.5,	TUNING.CALORIES_TINY,	TUNING.HEALING_TINY,	TUNING.PERISH_MED, 0,		
 								TUNING.CALORIES_SMALL,	TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 0),
 }
+
+-- Make Pickle It veggies usable in the crock pot
+local veggies = {"beet", "cabbage", "cucumber", "onion", "radish"}
+AddIngredientValues(veggies, {veggie=1}, true)
 
 local assets_seeds =
 {

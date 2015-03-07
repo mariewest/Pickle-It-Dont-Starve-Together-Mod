@@ -1,5 +1,6 @@
 require "tuning"
 require "pickled_recipes"
+require "cooking"
 
 local function MakePickledFoodStats(pickled_hunger, pickled_health, pickled_perishtime, pickled_sanity, pickled_foodtype, pickled_stacksize, source)
 	return {
@@ -36,6 +37,18 @@ PICKLED_FOODS =
 
 	pigs_foot = MakePickledFoodStats(	TUNING.CALORIES_LARGE, 		TUNING.HEALING_MEDLARGE, 	TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_MED,			FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
 }
+
+-- Make pickled food usable in the crock pot
+local veggies = {"beet_pickled", "cabbage_pickled", "cucumber_pickled", "onion_pickled", "radish_pickled", "carrot_pickled", "corn_pickled", "mushroom_pickled", "pumpkin_pickled", "eggplant_pickled"}
+AddIngredientValues(veggies, {veggie=0.5}, true)
+
+local meats = {"pigs_foot_pickled"}
+AddIngredientValues(meats, {meat=0.5}, true)
+
+AddIngredientValues({"egg_pickled"}, {egg=1}, true)
+
+AddIngredientValues({"fish_pickled"}, {meat=.5,fish=1}, true)
+
 
 local function MakePickledFood(name)
 	local assets =

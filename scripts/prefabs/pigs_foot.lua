@@ -1,3 +1,5 @@
+require "cooking"
+
 local assets=
 {
     Asset("ANIM", "anim/pigs_foot.zip"),						-- Animation Zip
