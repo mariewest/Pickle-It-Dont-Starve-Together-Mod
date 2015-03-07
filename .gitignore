@@ -1,5 +1,9 @@
+#################
+## Don't Starve Mod Art builds
+#################
+
 anim/*.zip
-exported/*.zip
+exported/*/*.zip
 
 #################
 ## Eclipse
