@@ -114,7 +114,7 @@ local function startpicklefn(inst)
 	setdescription(true)
 	
 	-- Slow down the time it takes the food to perish
-	inst:AddTag("fridge")
+	inst.components.pickler:SlowPerishing()
 	
 	inst.SoundEmitter:PlaySound("pickle_barrel/pickle_barrel/pickling", "pickling")
 	
@@ -124,9 +124,6 @@ end
 local function donepicklefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
-	
-	-- Return the time it takes the food to perish to normal
-	inst:RemoveTag("fridge")
 
 	inst.SoundEmitter:KillSound("pickling")
 	
@@ -137,9 +134,6 @@ local function continuedonefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
 	
-	-- Return the time it takes the food to perish to normal
-	inst:RemoveTag("fridge")
-	
 	inst.AnimState:PlayAnimation("closed")
 end
 
@@ -148,7 +142,7 @@ local function continuepicklefn(inst)
 	setdescription(true)
 	
 	-- Slow down the time it takes the food to perish
-	inst:AddTag("fridge")
+	inst.components.pickler:SlowPerishing()
 	
 	inst.AnimState:PlayAnimation("full")
 end
