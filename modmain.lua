@@ -37,28 +37,27 @@ end
 AddPrefabPostInit("pigman", AddPigLoot)
 AddPrefabPostInit("pigguard", AddPigLoot)
 
-
-local function pickler_dopickle(act)
+-- Add the pickleit action (Controller support!)
+pickleit_dopickle = function(act)
 	if act.target.components.pickler ~= nil then
-        if container ~= nil and container:IsOpen() and not container:IsOpenedBy(act.doer) then
-            return false, "INUSE"
-        elseif not act.target.components.pickler:CanPickle() then
-            return false
-        end
-        act.target.components.pickler:StartPickling()
+       if act.target.components.container ~= nil and act.target.components.container:IsOpen() and not act.target.components.container:IsOpenedBy(act.doer) then
+           return false, "INUSE"
+       elseif not act.target.components.pickler:CanPickle() then
+           return false
+       end
+       act.target.components.pickler:StartPickling()
 	end
 
 	return false
 end 
-AddAction('PICKLE', 'Pickle', pickler_dopickle)
+AddAction('PICKLEIT', GLOBAL.STRINGS.NAMES.PICKLE, pickleit_dopickle)
+AddStategraphActionHandler('wilson', GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKLEIT, "dolongaction"))
 
-
-local function pickler_pickle_button(inst, doer, actions, right)
+local function picklit_pickle_button(inst, doer, actions, right)
 	if right then
 		if not inst.components.pickler:Pickling() then
-			table.insert(actions, GLOBAL.ACTIONS.PICKLE)
-			--table.insert(actions, GLOBAL.ACTIONS.STORE)
+			table.insert(actions, GLOBAL.ACTIONS.PICKLEIT)
 		end	
 	end
 end
-AddComponentAction('SCENE', 'pickler', pickler_pickle_button)
+AddComponentAction('SCENE', 'pickler', picklit_pickle_button)
