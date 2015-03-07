@@ -5,7 +5,7 @@
         <file id="1" name="cabbage/cabbage_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1" name="cabbage01">
-        <file id="0" name="cabbage01/cabbage01.png" width="205" height="205" pivot_x="0.51" pivot_y="0.38"/>
+        <file id="0" name="cabbage01/cabbage01.png" width="205" height="205" pivot_x=".7" pivot_y="0.2"/>
     </folder>
     <entity id="0" name="cabbage">
         <animation id="0" name="cooked" length="1000">

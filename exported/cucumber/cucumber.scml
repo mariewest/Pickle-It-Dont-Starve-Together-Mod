@@ -6,7 +6,7 @@
         <file id="2" name="cucumber/pickle_golden.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1" name="cucumber01">
-        <file id="0" name="cucumber01/cucumber01.png" width="192" height="192" pivot_x="0.51" pivot_y="0.38"/>
+        <file id="0" name="cucumber01/cucumber01.png" width="192" height="192" pivot_x="0.51" pivot_y="0.52"/>
     </folder>
     <entity id="0" name="cucumber">
         <animation id="0" name="pickled_gold" length="1000">
