@@ -2,9 +2,8 @@
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
     <folder id="0" name="beet">
         <file id="0" name="beet/beet.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
-        <file id="1" name="beet/beet_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
-        <file id="2" name="beet/beet_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
-        <file id="3" name="beet/beet_planted.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="beet/beet_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="beet/beet_planted.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1" name="beet01">
         <file id="0" name="beet01/beet01.png" width="256" height="256" pivot_x="0.51" pivot_y="0.38"/>
@@ -13,40 +12,28 @@
         <animation id="0" name="planted" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="beet_planted" folder="0" file="3" abs_x="-131" abs_y="171" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="beet_planted" folder="0" file="2" abs_x="-131" abs_y="171" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="beet_planted">
                 <key id="0" spin="0">
-                    <object folder="0" file="3" x="-131" y="171" angle="0"/>
+                    <object folder="0" file="2" x="-131" y="171" angle="0"/>
                 </key>
             </timeline>
         </animation>
         <animation id="1" name="cooked" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="beet_cooked" folder="0" file="2" abs_x="-77" abs_y="122" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="0.6" abs_scale_y="0.6" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="beet_cooked" folder="0" file="1" abs_x="-77" abs_y="122" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="0.6" abs_scale_y="0.6" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="beet_cooked">
                 <key id="0" spin="0">
-                    <object folder="0" file="2" x="-77" y="122" angle="0" scale_x="0.6" scale_y="0.6"/>
+                    <object folder="0" file="1" x="-77" y="122" angle="0" scale_x="0.6" scale_y="0.6"/>
                 </key>
             </timeline>
         </animation>
-        <animation id="2" name="pickled" length="1000">
-            <mainline>
-                <key id="0">
-                    <object_ref id="0" name="beet_pickled" folder="0" file="1" abs_x="-131" abs_y="172" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
-                </key>
-            </mainline>
-            <timeline id="0" name="beet_pickled">
-                <key id="0" spin="0">
-                    <object folder="0" file="1" x="-131" y="172" angle="0"/>
-                </key>
-            </timeline>
-        </animation>
-        <animation id="3" name="idle" length="1000">
+        <animation id="2" name="idle" length="1000">
             <mainline>
                 <key id="0">
                     <object_ref id="0" name="beet" folder="0" file="0" abs_x="-132" abs_y="180" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
