@@ -37,6 +37,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_COOKED = {
 	"Roasted beets have a sweet earthy flavor", 
 	"Sweeter than unroasted beets", 
 }
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_SEEDS = {	
+	"It's a seed.", 
+}
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_PICKLED = {	
 	"I hear people really like pickled beets.\nMaybe I should give them a try.", 
 	"They actually look kinda tasty",
@@ -61,6 +64,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE = {
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE_COOKED = {	
 	"Crunchy and tasty", 
 	"So easy to make, just slice and cook", 
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE_SEEDS = {	
+	"It's a seed.", 
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.CABBAGE_PICKLED = {	
 	"My grandpa puts sauerkraut in his chocolate cakes", 
@@ -104,6 +110,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_COOKED = {
 	"It'll never become a pickle now", 
 	"Tastes like grilled water", 
 	"Poor Larry",
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_SEEDS = {	
+	"It's a seed.", 
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_PICKLED = {	
 	"This is quite a pickle", 
@@ -176,6 +185,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_COOKED = {
 	"If you hear an onion ring, answer it",
 	"I guess this makes me the Lord of the Onion Rings",
 }
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_SEEDS = {	
+	"It's a seed.", 
+}
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_PICKLED = {	
 	"What's round, white, and giggles?\nA tickled onion!",
 	"Beautiful and zesty... yum!",
@@ -232,6 +244,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH = {
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_COOKED = {	
 	"Delicious and healthy",
 	"Sweeter and softer than a raw radish",
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_SEEDS = {	
+	"It's a seed.", 
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_PICKLED = {	
 	"Sweet, tangy, and pink",
