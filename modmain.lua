@@ -46,6 +46,7 @@ pickleit_dopickle = function(act)
            return false
        end
        act.target.components.pickler:StartPickling()
+       return true
 	end
 
 	return false
