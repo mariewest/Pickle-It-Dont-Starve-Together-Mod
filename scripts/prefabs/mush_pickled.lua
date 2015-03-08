@@ -16,9 +16,9 @@ local function fn(Sim)
     
     MakeInventoryPhysics(inst)
 
-    anim:SetBank("mush_pickled")
-    anim:SetBuild("mush_pickled")
-    anim:PlayAnimation("idle")
+    inst.AnimState:SetBank("mush_pickled")
+    inst.AnimState:SetBuild("mush_pickled")
+    inst.AnimState:PlayAnimation("idle")
     
     if not TheWorld.ismastersim then
         return inst
