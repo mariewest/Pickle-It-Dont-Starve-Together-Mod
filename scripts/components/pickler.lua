@@ -1,5 +1,9 @@
 require "tuning"
 
+local function onpickleperson(self, pickleperson)
+    self.inst.replica.pickler:SetPicklePerson(pickleperson)
+end
+
 local Pickler = Class(function(self, inst)
     self.inst = inst
 
@@ -8,7 +12,17 @@ local Pickler = Class(function(self, inst)
 
 	-- Pickling should take 3 days to complete
     self.pickle_time = TUNING.TOTAL_DAY_TIME * 2
-end)
+
+    self.pickleperson = nil
+end,
+nil,
+{
+	pickleperson = onpickleperson
+})
+
+function Pickler:SetPicklePerson(pickleperson)
+	self._pickleperson = pickleperson
+end
 
 function Pickler:CanPickle()
 	local num = 0

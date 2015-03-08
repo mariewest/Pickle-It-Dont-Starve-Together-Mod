@@ -37,7 +37,7 @@ end
 AddPrefabPostInit("pigman", AddPigLoot)
 AddPrefabPostInit("pigguard", AddPigLoot)
 
---AddReplicableComponent('pickler')
+AddReplicableComponent('pickler')
 
 -- Add the pickleit action (Controller support!)
 pickleit_dopickle = function(act)
@@ -47,7 +47,10 @@ pickleit_dopickle = function(act)
        elseif not act.target.components.pickler:CanPickle() then
            return false
        end
+
+       act.target.components.pickler:SetPicklePerson(act.doer)
        act.target.components.pickler:StartPickling()
+
        return true
 	end
 

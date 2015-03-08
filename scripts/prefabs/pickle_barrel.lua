@@ -58,11 +58,12 @@ local pickle_barrel =
 			text = "Pickle",
 			position = Vector3(0, -80, 0),
 			fn = function(inst)
-				inst.components.pickler:StartPickling()
-			end,
-			
-			validfn = function(inst)
-				return inst.components.pickler:CanPickle()
+				if inst.components.pickler ~= nil then
+				    BufferedAction(inst.components.pickler.pickleperson, inst, ACTIONS.PICKLEIT):Do()
+				elseif inst.replica.container ~= nil and not inst.replica.container:IsBusy() then
+				    SendRPCToServer(RPC.DoWidgetButtonAction, ACTIONS.PICKLEIT.code, inst, ACTIONS.PICKLEIT.mod_name)
+				end
+
 			end,
 		}
 
