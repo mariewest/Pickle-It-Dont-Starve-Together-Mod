@@ -72,15 +72,6 @@ local function fn(Sim)
 	return inst
 end
 
-STRINGS.NAMES.PIGS_FOOT = "Pigs Foot"
-
--- Randomizes the inspection line upon inspection.
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGS_FOOT = {	
-	"Poor Wilbur...",
-	"This little piggy isn't going to the market anymore",
-}
-
-
 -- Make it so this can go in the cook_pot
 AddIngredientValues({"pigs_foot"}, {meat=.5}, true)
 
