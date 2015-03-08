@@ -76,9 +76,11 @@ local function MakePickledFood(name)
 		inst.AnimState:SetBuild("pickled_food")
 		inst.AnimState:PlayAnimation('pickled')
 	
-        if not TheWorld.ismastersim then
-            return inst
-        end
+	    if not TheWorld.ismastersim then
+	        return inst
+	    end
+		
+		inst.entity:SetPristine()
 
 		inst:AddComponent("perishable")
 		inst.components.perishable:SetPerishTime(PICKLED_FOODS[name].pickled_perishtime)

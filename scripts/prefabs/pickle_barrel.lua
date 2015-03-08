@@ -67,7 +67,7 @@ local pickle_barrel =
 
 	},
 	acceptsstacks = false,
-	type = "cooker",
+	--type = "cooker",
 	itemtestfn = itemtest,
 }
 

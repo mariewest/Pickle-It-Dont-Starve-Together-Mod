@@ -17,6 +17,12 @@ local function fn(Sim)
     anim:SetBuild("mush_pickled")
     anim:PlayAnimation("idle")
     
+    if not TheWorld.ismastersim then
+        return inst
+    end
+    
+    inst.entity:SetPristine()
+    
     inst:AddComponent("fertilizer")
     inst.components.fertilizer.fertilizervalue = TUNING.SPOILEDFOOD_FERTILIZE * 2
     inst.components.fertilizer.soil_cycles = TUNING.SPOILEDFOOD_SOILCYCLES * 2

@@ -18,7 +18,13 @@ local function fn(Sim)
 	inst.AnimState:SetBuild("pigs_foot")
 	inst.AnimState:SetBank("pigs_foot")
 	inst.AnimState:PlayAnimation("cooked")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
 	
+	inst.entity:SetPristine()
+		
 	-- Make it edible
 	inst:AddComponent("edible")
 	inst.components.edible.healthvalue = TUNING.HEALING_SMALL	-- Amount to heal
