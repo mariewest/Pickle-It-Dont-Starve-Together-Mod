@@ -21,7 +21,7 @@ nil,
 })
 
 function Pickler:SetPicklePerson(pickleperson)
-	self._pickleperson = pickleperson
+	self.pickleperson = pickleperson
 end
 
 function Pickler:CanPickle()
