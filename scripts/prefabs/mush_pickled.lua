@@ -44,13 +44,5 @@ local function fn(Sim)
 	return inst
 end
 
-STRINGS.NAMES.MUSH_PICKLED = "Pickled Mush"
-
--- Randomizes the inspection line upon inspection.
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.MUSH_PICKLED = {	
-	"Better not eat this", 
-	"Pickled into oblivion, I guess", 
-}
-
 -- Return our prefabbed mush_pickled
 return Prefab( "common/inventory/mush_pickled", fn, assets)
