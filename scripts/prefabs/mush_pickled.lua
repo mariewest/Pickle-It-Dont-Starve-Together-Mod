@@ -9,10 +9,13 @@ local assets=
 -- Modeled after spoiled food
 local function fn(Sim)
 	local inst = CreateEntity()
-	local trans = inst.entity:AddTransform()
-	local anim = inst.entity:AddAnimState()
-    MakeInventoryPhysics(inst)
     
+    inst.entity:AddTransform()
+    inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
+    
+    MakeInventoryPhysics(inst)
+
     anim:SetBank("mush_pickled")
     anim:SetBuild("mush_pickled")
     anim:PlayAnimation("idle")

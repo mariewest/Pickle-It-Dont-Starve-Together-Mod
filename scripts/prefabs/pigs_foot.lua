@@ -12,6 +12,8 @@ local function fn(Sim)
 	local inst = CreateEntity()
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
+	inst.entity:AddNetwork()
+
 	MakeInventoryPhysics(inst)
 	
 	inst:AddTag("meat")
