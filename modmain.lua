@@ -57,6 +57,7 @@ pickleit_dopickle = function(act)
 	return false
 end 
 AddAction('PICKLEIT', GLOBAL.STRINGS.NAMES.PICKLE, pickleit_dopickle)
+AddStategraphActionHandler('wilson_client', GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKLEIT, "dolongaction"))
 AddStategraphActionHandler('wilson', GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKLEIT, "dolongaction"))
 
 local function picklit_pickle_button(inst, doer, actions, right)
