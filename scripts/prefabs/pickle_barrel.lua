@@ -33,16 +33,6 @@ for y = 2, 1, -1 do
 	end
 end
 
-local function itemtest(inst, item, slot)
-	if item.components.edible ~= nil then
-		if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "GENERIC" then
-			return true
-		end	
-	end
-	
-	return false
-end
-
 local pickle_barrel = 
 {
 	widget = 
@@ -67,8 +57,7 @@ local pickle_barrel =
 
 	},
 	acceptsstacks = false,
-	--type = "cooker",
-	itemtestfn = itemtest,
+	type = "cooker",
 }
 
 -- Overload containers.widgetsetup so we can assign widget params
