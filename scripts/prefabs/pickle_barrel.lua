@@ -153,6 +153,7 @@ local function fn(Sim)
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
 	inst.entity:AddSoundEmitter()
+    inst.entity:AddNetwork()
 	
 	local minimap = inst.entity:AddMiniMapEntity()
 	minimap:SetIcon( "pickle_barrel.tex" )
@@ -167,6 +168,8 @@ local function fn(Sim)
     if not TheWorld.ismastersim then
         return inst
     end
+	
+	inst.entity:SetPristine()
 	
     inst:AddComponent("pickler")
     inst.components.pickler.onstartpickling = startpicklefn
