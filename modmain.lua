@@ -37,6 +37,8 @@ end
 AddPrefabPostInit("pigman", AddPigLoot)
 AddPrefabPostInit("pigguard", AddPigLoot)
 
+--AddReplicableComponent('pickler')
+
 -- Add the pickleit action (Controller support!)
 pickleit_dopickle = function(act)
 	if act.target.components.pickler ~= nil then
@@ -56,9 +58,7 @@ AddStategraphActionHandler('wilson', GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKLEI
 
 local function picklit_pickle_button(inst, doer, actions, right)
 	if right then
-		if not inst.components.pickler:Pickling() then
-			table.insert(actions, GLOBAL.ACTIONS.PICKLEIT)
-		end	
+		table.insert(actions, GLOBAL.ACTIONS.PICKLEIT)
 	end
 end
 AddComponentAction('SCENE', 'pickler', picklit_pickle_button)
