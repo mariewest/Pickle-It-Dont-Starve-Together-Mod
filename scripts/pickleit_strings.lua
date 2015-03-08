@@ -199,24 +199,24 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_PLANTED = {
 -- Pigs Foot
 
 STRINGS.NAMES.PIGS_FOOT = "Pigs Foot"
+STRINGS.NAMES.PIGS_FOOT_COOKED = "Pork Rinds"
+STRINGS.NAMES.PIGS_FOOT_PICKLED = "Pickled Pigs Foot"
+STRINGS.NAMES.PIGS_FOOT_DRIED = "Dried Pigs Foot"
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGS_FOOT = {	
 	"Poor Wilbur...",
 	"This little piggy isn't going to the market anymore",
 }
-
-STRINGS.NAMES.PIGS_FOOT_COOKED = "Pork Rinds"
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGS_FOOT_COOKED = {	
 	"Best eaten while watching football",
 	"A crunchy snack made from meat!",
 }
-
-STRINGS.NAMES.PIGS_FOOT_PICKLED = "Pickled Pigs Foot"
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGS_FOOT_PICKLED = {	
 	"Who thought this was a good idea?",
 	"I don't think a starving raptor would even eat this",
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGS_FOOT_DRIED = {	
+	"Delicious pig foot jerky...",
 }
 
 -- Pumpkin

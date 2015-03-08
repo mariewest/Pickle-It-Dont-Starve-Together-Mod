@@ -9,6 +9,7 @@ PrefabFiles = {
 
 	"pigs_foot",
 	"pigs_foot_cooked",
+	"Pigs_foot_dried",
 }
 
 local assets=

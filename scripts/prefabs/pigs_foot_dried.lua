@@ -1,10 +1,8 @@
-require "cooking"
-
 local assets=
 {
     Asset("ANIM", "anim/pigs_foot.zip"),						-- Animation Zip
-    Asset("ATLAS", "images/inventoryimages/pigs_foot.xml"),	-- Atlas for inventory TEX
-    Asset("IMAGE", "images/inventoryimages/pigs_foot.tex"),	-- TEX for inventory
+    Asset("ATLAS", "images/inventoryimages/pigs_foot_dried.xml"),	-- Atlas for inventory TEX
+    Asset("IMAGE", "images/inventoryimages/pigs_foot_dried.tex"),	-- TEX for inventory
 }
 
 local function fn(Sim)
@@ -19,19 +17,19 @@ local function fn(Sim)
 	-- Set animation info
 	inst.AnimState:SetBuild("pigs_foot")
 	inst.AnimState:SetBank("pigs_foot")
-	inst.AnimState:PlayAnimation("idle")
+	inst.AnimState:PlayAnimation("dried")
 	
 	-- Make it edible
 	inst:AddComponent("edible")
-	inst.components.edible.healthvalue = 0						-- Amount to heal
-	inst.components.edible.hungervalue = TUNING.CALORIES_SMALL	-- Amount to fill belly
-	inst.components.edible.sanityvalue = -TUNING.SANITY_SMALL	-- Amount to help Sanity
+	inst.components.edible.healthvalue = TUNING.HEALING_SMALL	-- Amount to heal
+	inst.components.edible.hungervalue = TUNING.CALORIES_MED	-- Amount to fill belly
+	inst.components.edible.sanityvalue = 0						-- Amount to help Sanity
 	inst.components.edible.ismeat = true    
 	inst.components.edible.foodtype = "MEAT"					-- The type of food
 	
 	-- Make it perishable
 	inst:AddComponent("perishable")
-	inst.components.perishable:SetPerishTime(TUNING.PERISH_FAST)
+	inst.components.perishable:SetPerishTime(TUNING.PERISH_SLOW)
 	inst.components.perishable:StartPerishing()
 	inst.components.perishable.onperishreplacement = "spoiled_food"
 	
@@ -44,8 +42,8 @@ local function fn(Sim)
 	
 	-- Make it an inventory item
 	inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.imagename = "pigs_foot"	-- Use our TEX sprite
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/pigs_foot.xml"	-- here's the atlas for our tex
+    inst.components.inventoryitem.imagename = "pigs_foot_dried"	-- Use our TEX sprite
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/pigs_foot_dried.xml"	-- here's the atlas for our tex
 	
 	-- It can burn!
 	MakeSmallBurnable(inst)
@@ -57,22 +55,9 @@ local function fn(Sim)
 	
     inst:AddComponent("tradable")
     inst.components.tradable.goldvalue = TUNING.GOLD_VALUES.MEAT
-	
-	-- This is cookable
-	inst:AddComponent("cookable")
-	inst.components.cookable.product = "pigs_foot_cooked" -- This is what it becomes when cooked
-	
-	-- Can be dried
-	inst:AddComponent("dryable")
-	inst.components.dryable:SetProduct("pigs_foot_dried")
-    --inst.components.dryable:SetProduct("smallmeat_dried")
-    inst.components.dryable:SetDryTime(TUNING.DRY_FAST)
-	
+		
 	return inst
 end
 
--- Make it so this can go in the cook_pot
-AddIngredientValues({"pigs_foot"}, {meat=.5}, true)
-
 -- Return our prefab
-return Prefab( "common/inventory/pigs_foot", fn, assets)
+return Prefab( "common/inventory/pigs_foot_dried", fn, assets)
