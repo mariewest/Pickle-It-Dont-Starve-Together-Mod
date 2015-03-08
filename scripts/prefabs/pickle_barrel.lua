@@ -4,6 +4,8 @@ require "modutil"
 
 local cooking = require("cooking")
 
+local containers = require("containers")
+
 local assets=
 {
 	Asset("ANIM", "anim/pickle_barrel.zip"),
@@ -69,6 +71,17 @@ local pickle_barrel =
 	type = "cooker",
 	itemtestfn = itemtest,
 }
+
+-- Overload containers.widgetsetup so we can assign widget params
+
+local oldwidgetsetup = containers.widgetsetup
+containers.widgetsetup = function(container, prefab, data)
+	if container.inst.prefab == "pickle_barrel" or prefab == "pickle_barrel" then
+	    data = pickle_barrel
+	end
+    oldwidgetsetup(container, prefab, data)
+end
+
 
 -- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.
 local function setdescription(isPickling)
@@ -170,7 +183,7 @@ local function fn(Sim)
     end
 	
 	inst.entity:SetPristine()
-	
+
     inst:AddComponent("pickler")
     inst.components.pickler.onstartpickling = startpicklefn
     inst.components.pickler.oncontinuepickling = continuepicklefn
