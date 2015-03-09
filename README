@@ -20,6 +20,15 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2015-03-08 [Version 1.3.0]
+- Ported to Don't Starve Together (DST)
+- Added Xbox controller support
+- Fixed veggie positions on farms
+- Veggies and their pickled versions can now go in the crock pot
+- New cabbage image
+- Tweaked food values
+
+
 2014-07-05 - Tweaked stats
 - Updated API version #
 - Modified pickle barrel crafting components (removed wet goop and gold; added rope)
