@@ -210,6 +210,7 @@ end
 
 -- Add recipe for pickle barrel
 local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer")
+crafting_recipe.sortkey = -404983266
 crafting_recipe.atlas = "images/inventoryimages/pickle_barrel.xml"
 
 
