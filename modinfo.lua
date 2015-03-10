@@ -14,6 +14,8 @@ forumthread = "/topic/29559-wip-pickle-it-a-mod-that-lets-you-pickle-things/"
 standalone = false
 restart_required = false
 
+priority = 0.00404983266
+
 -- Compatible with both the base game and reign of giants
 dont_starve_compatible = false
 reign_of_giants_compatible = false
