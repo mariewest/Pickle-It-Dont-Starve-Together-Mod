@@ -85,7 +85,7 @@ local function MakePickledFood(name)
 		inst:AddComponent("perishable")
 		inst.components.perishable:SetPerishTime(PICKLED_FOODS[name].pickled_perishtime)
 		inst.components.perishable:StartPerishing()
-		inst.components.perishable.onperishreplacement = "spoiled_food"
+		inst.components.perishable.onperishreplacement = "mush_pickled"
 
 		inst:AddComponent("edible")
 		inst.components.edible.healthvalue = PICKLED_FOODS[name].pickled_health

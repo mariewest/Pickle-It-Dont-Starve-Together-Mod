@@ -9,6 +9,8 @@ PrefabFiles = {
 
 	"pigs_foot",
 	"pigs_foot_cooked",
+	
+	"pickle_sword",
 }
 
 local assets=
@@ -52,8 +54,6 @@ local function picklit_pickle_button(inst, doer, actions, right)
 	end
 end
 AddComponentAction('SCENE', 'pickler', picklit_pickle_button)
-
-
 
 if not GLOBAL.TheNet:GetIsServer() then
     return

@@ -1,7 +1,8 @@
+STRINGS.NAMES.PICKLE = "Pickle"
+
 -- Pickle Barrel
 
 STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
-STRINGS.NAMES.PICKLE = "Pickle"
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_PICKLING = {	
 	"It takes a while for things to pickle", 
@@ -18,6 +19,18 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_GENERIC = {
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_GENERIC
 
 STRINGS.RECIPE_DESC.PICKLE_BARREL = "Pickle your food so it lasts longer!"
+
+-- Pickle Sword
+
+STRINGS.NAMES.PICKLE_SWORD = "Pickle Sword"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_SWORD = {
+	"Whack your enemies with your pickle!",
+	"My pickle sword is bigger than yours!",
+	"Pickle surprise!",
+}
+
+STRINGS.RECIPE_DESC.PICKLE_SWORD = "Whack your enemies with your pickle!"
 
 -- Beet
 
