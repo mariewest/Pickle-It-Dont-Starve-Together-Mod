@@ -60,14 +60,27 @@ local pickle_barrel =
 	type = "cooker",
 }
 
--- Overload containers.widgetsetup so we can assign widget params
+-- If you are using this mod as an example, please read the following forum post about how the following overload
+-- http://forums.kleientertainment.com/topic/51939-overriding-containerswidgetsetup-from-containerslua-in-your-mod/
 
+-- Overload containers.widgetsetup so we can assign widget params
 local oldwidgetsetup = containers.widgetsetup
-containers.widgetsetup = function(container, prefab, data)
+function containers.widgetsetup(container, prefab, data, ...)
+	-- Without this condition, the custom override would affect all container prefabs
 	if container.inst.prefab == "pickle_barrel" or prefab == "pickle_barrel" then
-	    data = pickle_barrel
+		--data = pickle_barrel -- can't do it this way because other mods aren't carrying third param (data) through
+
+		-- old way -- If mods ever update, we can uncomment the above assignment and get rid of this
+		-- This method sucks because if Klei changes how containers.widgetsetup(...) works, this code needs to be changed too since it's a copy
+        for k, v in pairs(pickle_barrel) do
+            container[k] = v
+        end
+        container:SetNumSlots(container.widget.slotpos ~= nil and #container.widget.slotpos or 0)
+        return
+        -- /old way
 	end
-    oldwidgetsetup(container, prefab, data)
+	
+    return oldwidgetsetup(container, prefab, data, ...)
 end
 
 
