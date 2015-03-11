@@ -1,5 +1,5 @@
 Project: Pickle It
-Description: Pickling mod for Don't Starve
+Description: Pickling mod for Don't Starve Together
 
 Authors:
 Marie West - http://mariewest.com
@@ -19,6 +19,12 @@ Pickle Barrel Pickling Sound:
 -------------------------------------------------------------
 
 Update History:
+
+2015-03-08 [Version 1.3.2] - Minor fixes
+- Added sortkey for pickle barrel recipe
+- Added priority to modinfo
+- Made onion rings restore a little sanity
+
 
 2015-03-08 [Version 1.3.0] - Don't Starve Together Port
 - Ported to Don't Starve Together (DST)
