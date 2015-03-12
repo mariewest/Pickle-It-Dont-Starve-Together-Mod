@@ -36,6 +36,8 @@ PICKLED_FOODS =
 	fish = MakePickledFoodStats(		TUNING.CALORIES_MED, 		TUNING.HEALING_MEDLARGE, 	TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_SMALL,		FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
 
 	pigs_foot = MakePickledFoodStats(	TUNING.CALORIES_LARGE, 		TUNING.HEALING_MEDLARGE, 	TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_MED,			FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
+	
+	cucumber_golden = MakePickledFoodStats(	TUNING.CALORIES_LARGE, 		TUNING.HEALING_MEDLARGE, 		TUNING.PERISH_SUPERSLOW, 	TUNING.SANITY_MEDLARGE, 		FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM,	nil),
 }
 
 -- Make pickled food usable in the crock pot
@@ -48,6 +50,8 @@ AddIngredientValues(meats, {meat=0.5}, true)
 AddIngredientValues({"egg_pickled"}, {egg=1}, true)
 
 AddIngredientValues({"fish_pickled"}, {meat=.5,fish=1}, true)
+
+AddIngredientValues({"cucumber_golden_pickled"}, {veggie=1}, true)
 
 
 local function MakePickledFood(name)

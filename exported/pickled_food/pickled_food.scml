@@ -14,6 +14,7 @@
         <file id="10" name="pickled_food/onion_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="11" name="pickled_food/pigs_foot_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
         <file id="12" name="pickled_food/radish_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="13" name="pickled_food/cucumber_golden_pickled.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="egg_pickled">
         <animation id="0" name="pickled" length="1000">
@@ -117,12 +118,12 @@
         <animation id="0" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="eggplant_pickled" folder="0" file="7" abs_x="-127" abs_y="153" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="eggplant_pickled" folder="0" file="7" abs_x="-127" abs_y="153" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="eggplant_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="7" x="-127" y="153"/>
+                    <object folder="0" file="7" x="-127" y="153" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -131,12 +132,12 @@
         <animation id="0" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="pumpkin_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="pumpkin_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="pumpkin_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="8" x="-127" y="161"/>
+                    <object folder="0" file="8" x="-127" y="161" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -145,12 +146,12 @@
         <animation id="0" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="beet_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="beet_pickled" folder="0" file="9" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="beet_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="9" x="-127" y="161"/>
+                    <object folder="0" file="9" x="-127" y="161" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -159,12 +160,12 @@
         <animation id="0" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="onion_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="onion_pickled" folder="0" file="10" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="onion_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="10" x="-127" y="161"/>
+                    <object folder="0" file="10" x="-127" y="161" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -173,12 +174,12 @@
         <animation id="0" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="pigs_foot_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="pigs_foot_pickled" folder="0" file="11" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="pigs_foot_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="11" x="-127" y="161"/>
+                    <object folder="0" file="11" x="-127" y="161" angle="0"/>
                 </key>
             </timeline>
         </animation>
@@ -187,12 +188,26 @@
         <animation id="0" name="pickled" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="radish_pickled" folder="0" file="8" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="radish_pickled" folder="0" file="12" abs_x="-127" abs_y="161" abs_pivot_x="0" abs_pivot_y="1" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="radish_pickled">
                 <key id="0" spin="0">
-                    <object folder="0" file="12" x="-127" y="161"/>
+                    <object folder="0" file="12" x="-127" y="161" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="13" name="cucumber_golden_pickled">
+        <animation id="0" name="pickled" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="cucumber_golden_pickled" folder="0" file="13" abs_x="-128" abs_y="142" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="cucumber_golden_pickled">
+                <key id="0" spin="0">
+                    <object folder="0" file="13" x="-128" y="142"/>
                 </key>
             </timeline>
         </animation>

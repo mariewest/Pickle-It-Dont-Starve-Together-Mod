@@ -111,6 +111,7 @@ STRINGS.NAMES.CUCUMBER = "Cucumber"
 STRINGS.NAMES.CUCUMBER_COOKED = "Grilled Cucumber"
 STRINGS.NAMES.CUCUMBER_SEEDS = "Cucumber Seeds"
 STRINGS.NAMES.CUCUMBER_PICKLED = "Pickle"
+STRINGS.NAMES.CUCUMBER_GOLDEN_PICKLED = "Golden Pickle"
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER = {	
 	"Looks cumbersome... cucumbersome", 
@@ -131,6 +132,10 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_PICKLED = {
 	"This is quite a pickle", 
 	"Why do gherkins giggle? They're PICKLish!",
 	"If only I had a hamburger to put this on",
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_GOLDEN_PICKLED = {	
+	"A super special pickle", 
+	"Much better than a regular pickle!",
 }
 
 -- Egg

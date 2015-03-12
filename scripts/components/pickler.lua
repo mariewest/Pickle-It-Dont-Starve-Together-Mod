@@ -39,7 +39,17 @@ local function pickleallitems(inst)
 		local result = nil
 		
 		if pickleit_Recipes[v.prefab] ~= nil then
-			result = SpawnPrefab(pickleit_Recipes[v.prefab])
+			if v.prefab == "cucumber" then
+				local rnd = math.random() * 100	
+				-- 2% chance of spawning a golden pickle
+				if rnd <= 2 then
+					result = SpawnPrefab("cucumber_golden_pickled")
+				else
+					result = SpawnPrefab(pickleit_Recipes[v.prefab])
+				end
+			else
+				result = SpawnPrefab(pickleit_Recipes[v.prefab])
+			end
 		else
 			result = SpawnPrefab("mush_pickled")
 		end
