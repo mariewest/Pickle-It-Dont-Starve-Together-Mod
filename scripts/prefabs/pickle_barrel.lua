@@ -145,7 +145,7 @@ local function donepicklefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
 
-	inst.SoundEmitter:KillSound("pickling")
+	--inst.SoundEmitter:KillSound("pickling")
 	
 	inst.AnimState:PlayAnimation("closed")
 end
