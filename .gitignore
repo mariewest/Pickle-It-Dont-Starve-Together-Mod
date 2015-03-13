@@ -3,7 +3,9 @@
 #################
 
 anim/*.zip
+exported/*.zip
 exported/*/*.zip
+exported/*/*/*.zip
 
 #################
 ## Eclipse
