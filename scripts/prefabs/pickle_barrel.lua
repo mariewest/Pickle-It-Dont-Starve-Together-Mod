@@ -58,6 +58,25 @@ local pickle_barrel =
 	},
 	acceptsstacks = false,
 	type = "cooker",
+	itemtestfn = function(container, item, slot)
+	    if item.prefab == "spoiled_food" then
+	        return true
+	    end
+
+	    --Perishable
+	    if not (item:HasTag("fresh") or item:HasTag("stale") or item:HasTag("spoiled")) then
+	        return false
+	    end
+
+	    --Edible
+	    for k, v in pairs(FOODTYPE) do
+	        if item:HasTag("edible_"..v) then
+	            return true
+	        end
+	    end
+
+	    return false
+	end,
 }
 
 -- If you are using this mod as an example, please read the following forum post about how the following overload
