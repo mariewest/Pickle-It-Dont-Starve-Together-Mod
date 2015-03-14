@@ -61,6 +61,15 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_PLANTED = {
 	"Looks like a beet",
 }
 
+-- Berries
+
+STRINGS.NAMES.BERRIES_PICKLED = "Pickled Berries"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BERRIES_PICKLED = {
+	"Pickled berries with just a touch of spice",
+	"This would be great with cheese",
+}
+
 -- Cabbage
 
 STRINGS.NAMES.CABBAGE = "Cabbage"
@@ -272,4 +281,13 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_PICKLED = {
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_PLANTED = {	
 	"It's a little wild radish",
+}
+
+-- Watermelon
+
+STRINGS.NAMES.WATERMELON_PICKLED = "Pickled Watermelon Rind"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.WATERMELON_PICKLED = {
+	"Who thought to pickle watermelon rind?",
+	"This would be good with cheese and crackers",
 }
