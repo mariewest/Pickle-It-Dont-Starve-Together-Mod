@@ -241,7 +241,7 @@ end
 --setdescription(false)
 
 -- Add recipe for pickle barrel
-local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer")
+local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer", 2)
 -- Removing sort key because recipe constructor auto-increments; using mod priority instead to ensure unique priority order
 -- http://forums.kleientertainment.com/topic/51231-general-mod-recipe-prioritysortkey-issue
 --crafting_recipe.sortkey = 3266001	--404983266001
