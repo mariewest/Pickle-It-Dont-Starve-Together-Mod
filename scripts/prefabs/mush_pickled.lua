@@ -25,6 +25,8 @@ local function fn(Sim)
     end
     
     inst.entity:SetPristine()
+
+    inst:AddTag("spoiled")
     
     inst:AddComponent("fertilizer")
     inst.components.fertilizer.fertilizervalue = TUNING.SPOILEDFOOD_FERTILIZE * 2
