@@ -1,11 +1,34 @@
-
-
 PICKLEIT_WORLD_PLANTS = 
 { 
     beet = "beet",
     onion = "onion",
+	potato = "potato",
     radish = "radish",
 }
+
+local function dig_up_potato(inst, chopper)
+	inst:Remove()
+	
+	-- Figure out how many potatoes to spawn (random 1-4 potatoes)
+	local rnd = math.random() * 100
+	local qty
+			
+	if rnd <= 10 then
+		qty = 4		-- 10% chance of 4 potatoes
+	elseif rnd <= 50 then
+		qty = 3		-- 40% chance of 3 potatoes
+	elseif rnd <= 90 then
+		qty = 2		-- 40% chance of 2 potatoes
+	else
+		qty = 1		-- 10% chance of 1 potato
+	end
+
+	-- Spawn the potatoes
+	for i=1,qty do
+		inst.components.lootdropper:SpawnLootPrefab("potato")	
+	end
+end
+
 
 local function MakeWorldPlant(name)
     local assets=
@@ -43,12 +66,21 @@ local function MakeWorldPlant(name)
 
         inst:AddComponent("inspectable")
         
-        inst:AddComponent("pickable")
-        inst.components.pickable.picksound = "dontstarve/wilson/pickup_plants"
-        inst.components.pickable:SetUp(name, 10)
-    	inst.components.pickable.onpickedfn = onpickedfn
-        
-        inst.components.pickable.quickpick = true
+		if name == "potato" then
+			-- Potatoes are not pickable; you use a shovel to get them
+			inst:AddComponent("lootdropper")
+			inst:AddComponent("workable")
+			inst.components.workable:SetWorkAction(ACTIONS.DIG)
+			inst.components.workable:SetOnFinishCallback(dig_up_potato)
+			inst.components.workable:SetWorkLeft(1)
+		else
+			-- All other veggies are pickable
+			inst:AddComponent("pickable")
+			inst.components.pickable.picksound = "dontstarve/wilson/pickup_plants"
+			inst.components.pickable:SetUp(name, 10)
+			inst.components.pickable.onpickedfn = onpickedfn
+			inst.components.pickable.quickpick = true
+		end
 
     	MakeSmallBurnable(inst)
         MakeSmallPropagator(inst)

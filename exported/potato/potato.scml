@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+    <folder id="1" name="potato">
+        <file id="0" name="potato/potato_planted.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="potato/potato_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="potato/potato.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+    </folder>
+	<folder id="2" name="potato01">
+        <file id="0" name="potato01/potato01.png" width="256" height="256" pivot_x="0.51" pivot_y="0.38"/>
+    </folder>
+    <entity id="1" name="potato">
+        <animation id="0" name="planted" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="potato_planted" folder="2" file="0" abs_x="-127" abs_y="225" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="potato_planted">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-127" y="225"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="cooked" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="potato_cooked" folder="2" file="1" abs_x="-146" abs_y="186" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="potato_cooked">
+                <key id="0" spin="0">
+                    <object folder="1" file="1" x="-146" y="186"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="potato" folder="2" file="2" abs_x="-117" abs_y="180" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="potato">
+                <key id="0" spin="0">
+                    <object folder="1" file="2" x="-117" y="180"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
