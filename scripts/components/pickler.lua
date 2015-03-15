@@ -1,14 +1,28 @@
 require "tuning"
 
+local function onpickleperson(self, pickleperson)
+    self.inst.replica.pickler:SetPicklePerson(pickleperson)
+end
+
 local Pickler = Class(function(self, inst)
     self.inst = inst
 
     self.targettime = nil
     self.task = nil
 
-	-- Pickling should take 3 days to complete
-    self.pickle_time = TUNING.TOTAL_DAY_TIME * 2
-end)
+	-- Pickling should take 1.5 days to complete
+    self.pickle_time = TUNING.TOTAL_DAY_TIME * 1.5
+
+    self.pickleperson = nil
+end,
+nil,
+{
+	pickleperson = onpickleperson
+})
+
+function Pickler:SetPicklePerson(pickleperson)
+	self.pickleperson = pickleperson
+end
 
 function Pickler:CanPickle()
 	local num = 0
@@ -25,7 +39,17 @@ local function pickleallitems(inst)
 		local result = nil
 		
 		if pickleit_Recipes[v.prefab] ~= nil then
-			result = SpawnPrefab(pickleit_Recipes[v.prefab])
+			if v.prefab == "cucumber" then
+				local rnd = math.random() * 100	
+				-- 2% chance of spawning a golden pickle
+				if rnd <= 2 then
+					result = SpawnPrefab("cucumber_golden_pickled")
+				else
+					result = SpawnPrefab(pickleit_Recipes[v.prefab])
+				end
+			else
+				result = SpawnPrefab(pickleit_Recipes[v.prefab])
+			end
 		else
 			result = SpawnPrefab("mush_pickled")
 		end

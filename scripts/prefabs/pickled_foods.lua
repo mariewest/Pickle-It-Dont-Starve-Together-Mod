@@ -31,7 +31,13 @@ PICKLED_FOODS =
 	mushroom = MakePickledFoodStats(	TUNING.CALORIES_SMALL, 		TUNING.HEALING_SMALL, 		TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_SUPERTINY,	FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM, 	"red_cap"),
 	pumpkin = MakePickledFoodStats(		TUNING.CALORIES_MED, 		TUNING.HEALING_SMALL, 		TUNING.PERISH_PRESERVED, 	TUNING.SANITY_SUPERTINY,	FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
 	eggplant = MakePickledFoodStats(	TUNING.CALORIES_SMALL, 		TUNING.HEALING_SMALL, 		TUNING.PERISH_PRESERVED, 	0,							FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
-
+	
+	cucumber_golden = MakePickledFoodStats(	TUNING.CALORIES_LARGE, 		TUNING.HEALING_MEDLARGE, 		TUNING.PERISH_SUPERSLOW, 	TUNING.SANITY_MEDLARGE, 		FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM,	nil),
+	
+	berries = MakePickledFoodStats(		TUNING.CALORIES_SMALL, 	TUNING.HEALING_SMALL, 		TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_SUPERTINY,	FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
+	
+	watermelon = MakePickledFoodStats(		TUNING.CALORIES_MED, 	TUNING.HEALING_SMALL, 		TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_TINY,	FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
+	
 	egg = MakePickledFoodStats(			TUNING.CALORIES_SMALL, 		TUNING.HEALING_SMALL, 		TUNING.PERISH_SUPERSLOW, 	TUNING.SANITY_TINY,			FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM, 	"bird_egg"),
 	fish = MakePickledFoodStats(		TUNING.CALORIES_MED, 		TUNING.HEALING_MEDLARGE, 	TUNING.PERISH_PRESERVED, 	-TUNING.SANITY_SMALL,		FOODTYPE.VEGGIE, 	TUNING.STACK_SIZE_SMALLITEM),
 
@@ -41,6 +47,15 @@ PICKLED_FOODS =
 -- Make pickled food usable in the crock pot
 local veggies = {"beet_pickled", "cabbage_pickled", "cucumber_pickled", "onion_pickled", "radish_pickled", "carrot_pickled", "corn_pickled", "mushroom_pickled", "pumpkin_pickled", "eggplant_pickled"}
 AddIngredientValues(veggies, {veggie=0.5}, true)
+
+local veggies_big = {"cucumber_golden_pickled"}
+AddIngredientValues(veggies_big, {veggie=1}, true)
+
+local fruit = {"berries_pickled"}
+AddIngredientValues(fruit, {fruit=0.5}, true)
+
+local fruit_big = {"watermelon_pickled"}
+AddIngredientValues(fruit_big, {fruit=1}, true)
 
 local meats = {"pigs_foot_pickled"}
 AddIngredientValues(meats, {meat=0.5}, true)
@@ -76,14 +91,16 @@ local function MakePickledFood(name)
 		inst.AnimState:SetBuild("pickled_food")
 		inst.AnimState:PlayAnimation('pickled')
 	
-        if not TheWorld.ismastersim then
-            return inst
-        end
+	    if not TheWorld.ismastersim then
+	        return inst
+	    end
+		
+		inst.entity:SetPristine()
 
 		inst:AddComponent("perishable")
 		inst.components.perishable:SetPerishTime(PICKLED_FOODS[name].pickled_perishtime)
 		inst.components.perishable:StartPerishing()
-		inst.components.perishable.onperishreplacement = "spoiled_food"
+		inst.components.perishable.onperishreplacement = "mush_pickled"
 
 		inst:AddComponent("edible")
 		inst.components.edible.healthvalue = PICKLED_FOODS[name].pickled_health

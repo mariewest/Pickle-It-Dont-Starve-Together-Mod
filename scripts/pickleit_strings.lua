@@ -1,7 +1,8 @@
+STRINGS.NAMES.PICKLE = "Pickle"
+
 -- Pickle Barrel
 
 STRINGS.NAMES.PICKLE_BARREL = "Pickle Barrel"
-STRINGS.NAMES.PICKLE = "Pickle"
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_PICKLING = {	
 	"It takes a while for things to pickle", 
@@ -18,6 +19,18 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_GENERIC = {
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL = STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_BARREL_GENERIC
 
 STRINGS.RECIPE_DESC.PICKLE_BARREL = "Pickle your food so it lasts longer!"
+
+-- Pickle Sword
+
+STRINGS.NAMES.PICKLE_SWORD = "Pickle Sword"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PICKLE_SWORD = {
+	"Whack your enemies with your pickle!",
+	"My pickle sword is bigger than yours!",
+	"Pickle surprise!",
+}
+
+STRINGS.RECIPE_DESC.PICKLE_SWORD = "Whack your enemies with your pickle!"
 
 -- Beet
 
@@ -46,6 +59,15 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_PICKLED = {
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BEET_PLANTED = {	
 	"Looks like a beet",
+}
+
+-- Berries
+
+STRINGS.NAMES.BERRIES_PICKLED = "Pickled Berries"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BERRIES_PICKLED = {
+	"Pickled berries with just a touch of spice",
+	"This would be great with cheese",
 }
 
 -- Cabbage
@@ -98,6 +120,7 @@ STRINGS.NAMES.CUCUMBER = "Cucumber"
 STRINGS.NAMES.CUCUMBER_COOKED = "Grilled Cucumber"
 STRINGS.NAMES.CUCUMBER_SEEDS = "Cucumber Seeds"
 STRINGS.NAMES.CUCUMBER_PICKLED = "Pickle"
+STRINGS.NAMES.CUCUMBER_GOLDEN_PICKLED = "Golden Pickle"
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER = {	
 	"Looks cumbersome... cucumbersome", 
@@ -118,6 +141,10 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_PICKLED = {
 	"This is quite a pickle", 
 	"Why do gherkins giggle? They're PICKLish!",
 	"If only I had a hamburger to put this on",
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUCUMBER_GOLDEN_PICKLED = {	
+	"A super special pickle", 
+	"Much better than a regular pickle!",
 }
 
 -- Egg
@@ -254,4 +281,13 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_PICKLED = {
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.RADISH_PLANTED = {	
 	"It's a little wild radish",
+}
+
+-- Watermelon
+
+STRINGS.NAMES.WATERMELON_PICKLED = "Pickled Watermelon Rind"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.WATERMELON_PICKLED = {
+	"Who thought to pickle watermelon rind?",
+	"This would be good with cheese and crackers",
 }

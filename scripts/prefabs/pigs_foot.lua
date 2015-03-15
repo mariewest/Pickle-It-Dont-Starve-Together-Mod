@@ -12,6 +12,8 @@ local function fn(Sim)
 	local inst = CreateEntity()
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
+	inst.entity:AddNetwork()
+
 	MakeInventoryPhysics(inst)
 	
 	inst:AddTag("meat")
@@ -20,7 +22,13 @@ local function fn(Sim)
 	inst.AnimState:SetBuild("pigs_foot")
 	inst.AnimState:SetBank("pigs_foot")
 	inst.AnimState:PlayAnimation("idle")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
 	
+	inst.entity:SetPristine()
+		
 	-- Make it edible
 	inst:AddComponent("edible")
 	inst.components.edible.healthvalue = 0						-- Amount to heal

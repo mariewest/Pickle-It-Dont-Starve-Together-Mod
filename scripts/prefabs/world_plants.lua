@@ -37,7 +37,9 @@ local function MakeWorldPlant(name)
 
         if not TheWorld.ismastersim then
             return inst
-        end   
+        end
+        
+        inst.entity:SetPristine() 
 
         inst:AddComponent("inspectable")
         

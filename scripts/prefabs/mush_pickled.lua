@@ -9,13 +9,22 @@ local assets=
 -- Modeled after spoiled food
 local function fn(Sim)
 	local inst = CreateEntity()
-	local trans = inst.entity:AddTransform()
-	local anim = inst.entity:AddAnimState()
-    MakeInventoryPhysics(inst)
     
-    anim:SetBank("mush_pickled")
-    anim:SetBuild("mush_pickled")
-    anim:PlayAnimation("idle")
+    inst.entity:AddTransform()
+    inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
+    
+    MakeInventoryPhysics(inst)
+
+    inst.AnimState:SetBank("mush_pickled")
+    inst.AnimState:SetBuild("mush_pickled")
+    inst.AnimState:PlayAnimation("idle")
+    
+    if not TheWorld.ismastersim then
+        return inst
+    end
+    
+    inst.entity:SetPristine()
     
     inst:AddComponent("fertilizer")
     inst.components.fertilizer.fertilizervalue = TUNING.SPOILEDFOOD_FERTILIZE * 2

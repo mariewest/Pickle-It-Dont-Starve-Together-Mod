@@ -1,5 +1,5 @@
 Project: Pickle It
-Description: Pickling mod for Don't Starve
+Description: Pickling mod for Don't Starve Together
 
 Authors:
 Marie West - http://mariewest.com
@@ -19,6 +19,32 @@ Pickle Barrel Pickling Sound:
 -------------------------------------------------------------
 
 Update History:
+
+2015-03-12 [Version 1.3.4] - Golden pickle
+- Added golden pickle (rare chance of pickles turning into golden pickles when pickling)
+- Added restrictions on what can go in the pickle barrel
+- Obsolete code clean-up
+
+
+2015-03-10 [Version 1.3.3] - Added pickle sword
+- Added pickle sword
+- Resolved conflict with other container mods
+
+
+2015-03-09 [Version 1.3.2] - Minor fixes
+- Added sortkey for pickle barrel recipe
+- Added priority to modinfo
+- Made onion rings restore a little sanity
+
+
+2015-03-08 [Version 1.3.0] - Don't Starve Together Port
+- Ported to Don't Starve Together (DST)
+- Added Xbox controller support
+- Fixed veggie positions on farms
+- Veggies and their pickled versions can now go in the crock pot
+- New cabbage image
+- Tweaked food values
+
 
 2014-07-05 - Tweaked stats
 - Updated API version #

@@ -3,6 +3,7 @@ require "recipe"
 require "modutil"
 
 local cooking = require("cooking")
+local containers = require("containers")
 
 local assets=
 {
@@ -32,16 +33,6 @@ for y = 2, 1, -1 do
 	end
 end
 
-local function itemtest(inst, item, slot)
-	if item.components.edible ~= nil then
-		if item.components.edible.foodtype == "VEGGIE" or item.components.edible.foodtype == "MEAT" or item.components.edible.foodtype == "GENERIC" then
-			return true
-		end	
-	end
-	
-	return false
-end
-
 local pickle_barrel = 
 {
 	widget = 
@@ -56,19 +47,61 @@ local pickle_barrel =
 			text = "Pickle",
 			position = Vector3(0, -80, 0),
 			fn = function(inst)
-				inst.components.pickler:StartPickling()
-			end,
-			
-			validfn = function(inst)
-				return inst.components.pickler:CanPickle()
+				if inst.components.pickler ~= nil then
+				    BufferedAction(ThePlayer, inst, ACTIONS.PICKLEIT):Do()
+				elseif inst.replica.container ~= nil and not inst.replica.container:IsBusy() then
+				    SendRPCToServer(RPC.DoWidgetButtonAction, ACTIONS.PICKLEIT.code, inst, ACTIONS.PICKLEIT.mod_name)
+				end
 			end,
 		}
 
 	},
 	acceptsstacks = false,
 	type = "cooker",
-	itemtestfn = itemtest,
+	itemtestfn = function(container, item, slot)
+	    if item.prefab == "spoiled_food" then
+	        return true
+	    end
+
+	    --Perishable
+	    if not (item:HasTag("fresh") or item:HasTag("stale") or item:HasTag("spoiled")) then
+	        return false
+	    end
+
+	    --Edible
+	    for k, v in pairs(FOODTYPE) do
+	        if item:HasTag("edible_"..v) then
+	            return true
+	        end
+	    end
+
+	    return false
+	end,
 }
+
+-- If you are using this mod as an example, please read the following forum post about how the following overload
+-- http://forums.kleientertainment.com/topic/51939-overriding-containerswidgetsetup-from-containerslua-in-your-mod/
+
+-- Overload containers.widgetsetup so we can assign widget params
+local oldwidgetsetup = containers.widgetsetup
+function containers.widgetsetup(container, prefab, data, ...)
+	-- Without this condition, the custom override would affect all container prefabs
+	if container.inst.prefab == "pickle_barrel" or prefab == "pickle_barrel" then
+		--data = pickle_barrel -- can't do it this way because other mods aren't carrying third param (data) through
+
+		-- old way -- If mods ever update, we can uncomment the above assignment and get rid of this
+		-- This method sucks because if Klei changes how containers.widgetsetup(...) works, this code needs to be changed too since it's a copy
+        for k, v in pairs(pickle_barrel) do
+            container[k] = v
+        end
+        container:SetNumSlots(container.widget.slotpos ~= nil and #container.widget.slotpos or 0)
+        return
+        -- /old way
+	end
+	
+    return oldwidgetsetup(container, prefab, data, ...)
+end
+
 
 -- Randomizes the inspection line upon inspection, based on whether or not the pickle barrel is pickling.
 local function setdescription(isPickling)
@@ -112,7 +145,7 @@ local function donepicklefn(inst)
 	-- Change the pickle barrel descriptions back to default
 	setdescription(false)
 
-	inst.SoundEmitter:KillSound("pickling")
+	--inst.SoundEmitter:KillSound("pickling")
 	
 	inst.AnimState:PlayAnimation("closed")
 end
@@ -170,7 +203,7 @@ local function fn(Sim)
     end
 	
 	inst.entity:SetPristine()
-	
+
     inst:AddComponent("pickler")
     inst.components.pickler.onstartpickling = startpicklefn
     inst.components.pickler.oncontinuepickling = continuepicklefn
@@ -208,7 +241,10 @@ end
 --setdescription(false)
 
 -- Add recipe for pickle barrel
-local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer")
+local crafting_recipe = Recipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, RECIPETABS.FARM,  TECH.SCIENCE_ONE, "pickle_barrel_placer", 2)
+-- Removing sort key because recipe constructor auto-increments; using mod priority instead to ensure unique priority order
+-- http://forums.kleientertainment.com/topic/51231-general-mod-recipe-prioritysortkey-issue
+--crafting_recipe.sortkey = 3266001	--404983266001
 crafting_recipe.atlas = "images/inventoryimages/pickle_barrel.xml"
 
 
