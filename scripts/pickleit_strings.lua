@@ -223,6 +223,27 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_PLANTED = {
 	"Look, a wild onion!",
 }
 
+-- Potato
+
+STRINGS.NAMES.POTATO = "Potato"
+STRINGS.NAMES.POTATO_COOKED = "Skillet Potatoes"
+STRINGS.NAMES.POTATO_PLANTED = "Potato"
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO = {	
+	"Boil 'em, mash 'em, stick 'em in a stew",
+	"I think, therefore I yam",
+	"Taters gonna tate",
+	"What's taters, precious?",
+	"What has eyes but can't see?\nPotatoes!",
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO_COOKED = {	
+	"Simple, quick, and delicious potatoes", 
+	"Flavorful fried potatoes", 
+}
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO_PLANTED = {	
+	"Looks like a potato",
+}
+
 -- Pigs Foot
 
 STRINGS.NAMES.PIGS_FOOT = "Pigs Foot"

@@ -1,9 +1,8 @@
-
-
 PICKLEIT_WORLD_PLANTS = 
 { 
     beet = "beet",
     onion = "onion",
+	potato = "potato",
     radish = "radish",
 }
 
