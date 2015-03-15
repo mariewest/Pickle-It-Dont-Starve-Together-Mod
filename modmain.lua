@@ -74,14 +74,11 @@ end
 AddPrefabPostInit("pigman", AddPigLoot)
 AddPrefabPostInit("pigguard", AddPigLoot)
 
-
 -- Override for potatos on farm giving multiples
-
 local Crop = require('components/crop')
 local oldCropHarvest = Crop.Harvest
 Crop.Harvest = function(self, harvester, ...)
     if self.product_prefab == "potato" then
-    	print('HERE WE ARE!')
 	    if self.matured then
 			local product = GLOBAL.SpawnPrefab(self.product_prefab)
 	        if harvester then
