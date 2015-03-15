@@ -20,26 +20,26 @@ local UNCOMMON = 1
 local RARE = .5
 
 PICKLEITVEGGIES = 
-{											--sw,	hunger, 									health, 									perish_time, 					sanity, 
-											--		cooked_hunger, 						cooked_health, 						cooked_perish_time, 		cooked_sanity
+{											--sw,	hunger, 									health, 									perish_time, 						sanity, 
+											--		cooked_hunger, 						cooked_health, 						cooked_perish_time, 			cooked_sanity
 											
- 	beet = MakeVegStats(		.5,	TUNING.CALORIES_SMALL,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 	0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 	0),
+ 	beet = MakeVegStats(		.5,	TUNING.CALORIES_SMALL,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 			0,		
+													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 			0),
 																	
-	cabbage = MakeVegStats(	2,		TUNING.CALORIES_SMALL,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 	0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 	0),
+	cabbage = MakeVegStats(	2,		TUNING.CALORIES_SMALL,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 			0,		
+													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 			0),
 																	
-	cucumber = MakeVegStats(2,		TUNING.CALORIES_SMALL,			0,											TUNING.PERISH_MED, 	0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_SMALL,		TUNING.PERISH_FAST, 	0),
+	cucumber = MakeVegStats(2,		TUNING.CALORIES_SMALL,			0,											TUNING.PERISH_MED, 			0,		
+													TUNING.CALORIES_SMALL,			TUNING.HEALING_SMALL,		TUNING.PERISH_FAST, 			0),
 																	
-	onion = MakeVegStats(		1,		TUNING.CALORIES_SMALL,			0,											TUNING.PERISH_MED, 	0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_SMALL,		TUNING.PERISH_FAST, 	TUNING.SANITY_TINY),
+	onion = MakeVegStats(		1,		TUNING.CALORIES_SMALL,			0,											TUNING.PERISH_MED, 			0,		
+													TUNING.CALORIES_SMALL,			TUNING.HEALING_SMALL,		TUNING.PERISH_FAST, 			TUNING.SANITY_TINY),
 																	
-	potato = MakeVegStats(		2,		TUNING.CALORIES_SMALL,			-TUNING.HEALING_SMALL,		TUNING.PERISH_SLOW, 	-TUNING.SANITY_SMALL,		
-													TUNING.CALORIES_MEDSMALL,	TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 	0),
+	potato = MakeVegStats(		2,		TUNING.CALORIES_SMALL,			-TUNING.HEALING_SMALL,		TUNING.PERISH_SLOW, 			-TUNING.SANITY_SMALL,		
+													TUNING.CALORIES_MEDSMALL,	TUNING.HEALING_SMALL,		TUNING.PERISH_SUPERFAST, 0),
 																	
-	radish = MakeVegStats(		.5,	TUNING.CALORIES_TINY,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 	0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 	0),
+	radish = MakeVegStats(		.5,	TUNING.CALORIES_TINY,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 			0,		
+													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 			0),
 }
 
 -- Make Pickle It veggies usable in the crock pot
@@ -179,8 +179,9 @@ local function MakeVeggie(name, has_seeds)
 
 		inst:AddComponent("bait")
 		
-		-- Potatoes are their own seeds
+		-- Potatoes are a little special
 		if name == "potato" then
+			-- Potatoes are their own seeds
 			inst:AddComponent("plantable")
 			inst.components.plantable.growtime = TUNING.SEEDS_GROW_TIME
 			inst.components.plantable.product = name

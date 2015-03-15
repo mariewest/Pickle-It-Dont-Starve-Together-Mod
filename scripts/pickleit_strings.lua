@@ -241,7 +241,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO_COOKED = {
 	"Flavorful fried potatoes", 
 }
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO_PLANTED = {	
-	"Looks like a potato",
+	"If I want that potato, I'll need a shovel",
 }
 
 -- Pigs Foot
