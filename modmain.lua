@@ -73,3 +73,39 @@ end
 
 AddPrefabPostInit("pigman", AddPigLoot)
 AddPrefabPostInit("pigguard", AddPigLoot)
+
+
+-- Override for potatos on farm giving multiples
+
+local Crop = require('components/crop')
+local oldCropHarvest = Crop.Harvest
+Crop.Harvest = function(self, harvester, ...)
+    if self.product_prefab == "potato" then
+    	print('HERE WE ARE!')
+	    if self.matured then
+			local product = GLOBAL.SpawnPrefab(self.product_prefab)
+	        if harvester then
+	        	local rnd = math.random() * 100
+	        	local count = 0
+	        	if rnd <= 20 then count = 1 elseif rnd <= 60 then count = 2 else count = 3 end
+	        	product.components.stackable:SetStackSize(count)
+	            harvester.components.inventory:GiveItem(product)
+	        else
+	            product.Transform:SetPosition(self.grower.Transform:GetWorldPosition())
+	            Launch(product, self.grower, TUNING.LAUNCH_SPEED_SMALL)
+	        end 
+	        GLOBAL.ProfileStatsAdd("grown_"..product.prefab) 
+	        
+	        self.matured = false
+	        self.growthpercent = 0
+	        self.product_prefab = nil
+	        self.grower.components.grower:RemoveCrop(self.inst)
+	        self.grower = nil
+	        
+	        return true
+	    end
+	    return
+	end
+
+	return oldCropHarvest(self, harvester, ...)
+end
