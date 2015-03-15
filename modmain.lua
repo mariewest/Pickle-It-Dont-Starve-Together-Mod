@@ -21,6 +21,7 @@ local assets=
 
 local require = GLOBAL.require
 require "pickleit_strings"
+require "pickleit_helpers"
 
 AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
 
@@ -102,6 +103,7 @@ local function ModDryingRack(inst)
 
     inst.components.dryer:SetStartDryingFn(onstartdrying)
     inst.components.dryer:SetContinueDryingFn(onstartdrying)
+	inst.components.dryer:SetDoneDryingFn(setdone)
     inst.components.dryer:SetContinueDoneFn(setdone)
 end
  

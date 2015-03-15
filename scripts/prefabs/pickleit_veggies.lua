@@ -77,7 +77,6 @@ local function MakeVeggie(name, has_seeds)
 	local prefabs =
 	{
 		name.."_cooked",
-		name.."_pickled",
 		"spoiled_food",
 	}
 	
@@ -256,9 +255,6 @@ end
 
 local prefs = {}
 for veggiename,veggiedata in pairs(PICKLEITVEGGIES) do
-	-- Add them to global
-	VEGGIES[veggiename] = veggiedata
-	
 	local veg, cooked, seeds
 
 	-- Potatoes don't have seeds; all other veggies do
@@ -272,6 +268,9 @@ for veggiename,veggiedata in pairs(PICKLEITVEGGIES) do
 	table.insert(prefs, cooked)
 	if seeds then
 		table.insert(prefs, seeds)
+		
+		-- Add them to global
+		VEGGIES[veggiename] = veggiedata
 	end
 end
 
