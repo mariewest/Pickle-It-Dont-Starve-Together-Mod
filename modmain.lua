@@ -76,6 +76,7 @@ AddPrefabPostInit("pigguard", AddPigLoot)
 
 
 -- Meatrack overload for pigs_foot on meatrack
+local meatrack = require('prefabs/meatrack')
 
 local function ModDryingRack(inst)
 
@@ -84,7 +85,7 @@ local function ModDryingRack(inst)
 		if dryable == "pigs_foot" then
 		    inst.AnimState:PlayAnimation("drying_pre")
 			inst.AnimState:PushAnimation("drying_loop", true)
-			inst.AnimState:OverrideSymbol("swap_dried", "pigs_foot_hanging", "pigs_foot_hanging")
+			inst.AnimState:OverrideSymbol("swap_dried", "pigs_foot", "pigs_foot_hanging")
 			return
 		end
 
@@ -95,7 +96,7 @@ local function ModDryingRack(inst)
 	local setdone = function(inst, product, ...)
 	    if product == "pigs_foot_dried" then
 		    inst.AnimState:PlayAnimation("idle_full")
-		    inst.AnimState:OverrideSymbol("swap_dried", "pigs_foot_dried_hanging", "pigs_foot_dried_hanging")
+		    inst.AnimState:OverrideSymbol("swap_dried", "pigs_foot", "pigs_foot_dried_hanging")
 		    return
 	    end
 
