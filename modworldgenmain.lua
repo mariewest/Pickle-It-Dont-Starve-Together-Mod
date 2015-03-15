@@ -25,7 +25,7 @@ GLOBAL.terrain.filter.radish_planted = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFL
 GLOBAL.terrain.rooms.BGCrappyForest.contents.distributeprefabs.potato_planted = .01
 GLOBAL.terrain.rooms.BGForest.contents.distributeprefabs.potato_planted = .02
 GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.potato_planted = .02
-GLOBAL.terrain.rooms.BGNoise.contents.distributeprefabs.potato_planted = .025
+GLOBAL.terrain.rooms.BGNoise.contents.distributeprefabs.potato_planted = .01
 GLOBAL.terrain.filter.potato_planted = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
 
 -- Decrease the spawn rate of carrots in the world spawn to keep balance.
