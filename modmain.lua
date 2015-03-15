@@ -9,7 +9,7 @@ PrefabFiles = {
 
 	"pigs_foot",
 	"pigs_foot_cooked",
-	"Pigs_foot_dried",
+	"pigs_foot_dried",
 	"pickle_sword",
 }
 
@@ -73,3 +73,38 @@ end
 
 AddPrefabPostInit("pigman", AddPigLoot)
 AddPrefabPostInit("pigguard", AddPigLoot)
+
+
+-- Meatrack overload for pigs_foot on meatrack
+
+local function ModDryingRack(inst)
+
+	local oldonstartdrying = inst.onstartdrying
+	local onstartdrying = function(inst, dryable, ...)
+		if dryable == "pigs_foot" then
+		    inst.AnimState:PlayAnimation("drying_pre")
+			inst.AnimState:PushAnimation("drying_loop", true)
+			inst.AnimState:OverrideSymbol("swap_dried", "pigs_foot_hanging", "pigs_foot_hanging")
+			return
+		end
+
+		return oldonstartdrying(inst, dryable, ...)
+	end
+
+	local oldsetdone = inst.setdone
+	local setdone = function(inst, product, ...)
+	    if product == "pigs_foot_dried" then
+		    inst.AnimState:PlayAnimation("idle_full")
+		    inst.AnimState:OverrideSymbol("swap_dried", "pigs_foot_dried_hanging", "pigs_foot_dried_hanging")
+		    return
+	    end
+
+	    return oldsetdone(inst, product, ...)
+	end
+
+    inst.components.dryer:SetStartDryingFn(onstartdrying)
+    inst.components.dryer:SetContinueDryingFn(onstartdrying)
+    inst.components.dryer:SetContinueDoneFn(setdone)
+end
+ 
+AddPrefabPostInit("meatrack", ModDryingRack)

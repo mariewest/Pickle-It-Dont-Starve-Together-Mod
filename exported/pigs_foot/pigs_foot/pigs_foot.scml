@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+    <folder id="0">
+        <file id="0" name="pigs_foot.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="pigs_foot_cooked.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="pigs_foot_dried.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="pigs_foot">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="pigs_foot" folder="0" file="0" abs_x="-139" abs_y="170" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pigs_foot">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-139" y="170"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="cooked" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="pigs_foot_cooked" folder="0" file="1" abs_x="-129" abs_y="160" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pigs_foot_cooked">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-129" y="160"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="dried" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="pigs_foot_dried" folder="0" file="2" abs_x="-123" abs_y="113" abs_pivot_x="0" abs_pivot_y="1" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pigs_foot_dried">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-123" y="113"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
