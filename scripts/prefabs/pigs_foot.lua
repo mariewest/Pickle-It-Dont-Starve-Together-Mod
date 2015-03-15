@@ -3,7 +3,6 @@ require "cooking"
 local assets=
 {
     Asset("ANIM", "anim/pigs_foot.zip"),						-- Animation Zip
-
     Asset("ATLAS", "images/inventoryimages/pigs_foot.xml"),	-- Atlas for inventory TEX
     Asset("IMAGE", "images/inventoryimages/pigs_foot.tex"),	-- TEX for inventory
 }
