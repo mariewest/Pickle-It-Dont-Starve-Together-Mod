@@ -178,6 +178,13 @@ local function MakeVeggie(name, has_seeds)
 		inst.components.perishable.onperishreplacement = "spoiled_food"   
 
 		inst:AddComponent("bait")
+		
+		-- Potatoes are their own seeds
+		if name == "potato" then
+			inst:AddComponent("plantable")
+			inst.components.plantable.growtime = TUNING.SEEDS_GROW_TIME
+			inst.components.plantable.product = name
+		end
 
 		inst:AddComponent("cookable")
 		inst.components.cookable.product = name.."_cooked"
