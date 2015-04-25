@@ -20,6 +20,9 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2015-04-25 [Version 1.3.6] - Quick fix for DST update
+ - Changed crafting recipes according to latest DST update
+
 2015-03-15 [Version 1.3.5] - Added potato and other new foods + balancing
  - Reduced pickling time to 1.5 days
  - New vegetable: potato
