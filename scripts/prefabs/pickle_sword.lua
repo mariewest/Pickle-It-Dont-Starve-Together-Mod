@@ -80,12 +80,12 @@ local function fn()
 end
 
 -- Add recipe for pickle sword
-local cucumber_pickled = Ingredient( "cucumber_pickled", 1)  
-cucumber_pickled.atlas = "images/inventoryimages/cucumber_pickled.xml"
-local crafting_recipe = Recipe( "pickle_sword", { cucumber_pickled , Ingredient("twigs", 2), Ingredient("rope", 1)} , RECIPETABS.WAR, TECH.SCIENCE_ONE)  
+--local cucumber_pickled = Ingredient( "cucumber_pickled", 1)  
+--cucumber_pickled.atlas = "images/inventoryimages/cucumber_pickled.xml"
+--local crafting_recipe = Recipe( "pickle_sword", { cucumber_pickled , Ingredient("twigs", 2), Ingredient("rope", 1)} , RECIPETABS.WAR, TECH.SCIENCE_ONE)  
 -- Removing sort key because recipe constructor auto-increments; using mod priority instead to ensure unique priority order
 -- http://forums.kleientertainment.com/topic/51231-general-mod-recipe-prioritysortkey-issue
 --crafting_recipe.sortkey = 3266002	--404983266002
-crafting_recipe.atlas = "images/inventoryimages/pickle_sword.xml"            
+--crafting_recipe.atlas = "images/inventoryimages/pickle_sword.xml"            
 
 return  Prefab("common/inventory/pickle_sword", fn, assets, prefabs)

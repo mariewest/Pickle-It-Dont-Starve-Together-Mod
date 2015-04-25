@@ -141,3 +141,16 @@ Crop.Harvest = function(self, harvester, ...)
 
 	return oldCropHarvest(self, harvester, ...)
 end
+
+
+--- CRAFTING RECIPES
+
+-- Moved there here since it's deprecated to call Recipe from prefabs... So now the code gets messier.
+local crafting_recipe_pickle_barrel = AddRecipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, GLOBAL.RECIPETABS.FARM,  GLOBAL.TECH.SCIENCE_ONE, "pickle_barrel_placer", 2)
+crafting_recipe_pickle_barrel.atlas = "images/inventoryimages/pickle_barrel.xml"
+
+local cucumber_pickled = Ingredient( "cucumber_pickled", 1)
+cucumber_pickled.atlas = "images/inventoryimages/cucumber_pickled.xml"
+
+local crafting_recipe_pickle_sword = Recipe( "pickle_sword", { cucumber_pickled , Ingredient("twigs", 2), Ingredient("rope", 1)} , GLOBAL.RECIPETABS.WAR, GLOBAL.TECH.SCIENCE_ONE)
+crafting_recipe_pickle_sword.atlas = "images/inventoryimages/pickle_sword.xml"
