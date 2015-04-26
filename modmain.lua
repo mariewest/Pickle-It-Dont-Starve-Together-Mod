@@ -59,7 +59,7 @@ AddComponentAction('SCENE', 'pickler', picklit_pickle_button)
 
 --- CRAFTING RECIPES
 
--- Moved there here since it's deprecated to call Recipe from prefabs... So now the code gets messier.
+-- Moved here since it's deprecated to call Recipe from prefabs... So now the code gets messier.
 local crafting_recipe_pickle_barrel = AddRecipe("pickle_barrel", {Ingredient("boards", 3), Ingredient("rope", 2)}, GLOBAL.RECIPETABS.FARM,  GLOBAL.TECH.SCIENCE_ONE, "pickle_barrel_placer", 2)
 crafting_recipe_pickle_barrel.atlas = "images/inventoryimages/pickle_barrel.xml"
 
@@ -116,14 +116,16 @@ local function ModDryingRack(inst)
 	end
 
     inst.components.dryer:SetStartDryingFn(onstartdrying)
-    inst.components.dryer:SetContinueDryingFn(onstartdrying)
 	inst.components.dryer:SetDoneDryingFn(setdone)
-    inst.components.dryer:SetContinueDoneFn(setdone)
+	
+	-- Klei apparently removed these functions :|
+	--inst.components.dryer:SetContinueDryingFn(onstartdrying)
+    --inst.components.dryer:SetContinueDoneFn(setdone)
 end
  
 AddPrefabPostInit("meatrack", ModDryingRack)
 
--- Override for potatos on farm giving multiples
+-- Override for potatoes on farm giving multiples
 local Crop = require('components/crop')
 local oldCropHarvest = Crop.Harvest
 Crop.Harvest = function(self, harvester, ...)
