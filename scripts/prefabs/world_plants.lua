@@ -1,5 +1,5 @@
-PICKLEIT_WORLD_PLANTS = 
-{ 
+PICKLEIT_WORLD_PLANTS =
+{
     beet = "beet",
     onion = "onion",
 	potato = "potato",
@@ -7,12 +7,10 @@ PICKLEIT_WORLD_PLANTS =
 }
 
 local function dig_up_potato(inst, chopper)
-	inst:Remove()
-	
 	-- Figure out how many potatoes to spawn (random 1-4 potatoes)
 	local rnd = math.random() * 100
 	local qty
-			
+
 	if rnd <= 10 then
 		qty = 4		-- 10% chance of 4 potatoes
 	elseif rnd <= 50 then
@@ -25,8 +23,9 @@ local function dig_up_potato(inst, chopper)
 
 	-- Spawn the potatoes
 	for i=1,qty do
-		inst.components.lootdropper:SpawnLootPrefab("potato")	
+		inst.components.lootdropper:SpawnLootPrefab("potato")
 	end
+    inst:Remove()    
 end
 
 
@@ -52,7 +51,7 @@ local function MakeWorldPlant(name)
     	inst.entity:AddAnimState()
     	inst.entity:AddSoundEmitter()
         inst.entity:AddNetwork()
-       
+
         inst.AnimState:SetBank(name)
         inst.AnimState:SetBuild(name)
         inst.AnimState:PlayAnimation("planted")
@@ -61,11 +60,11 @@ local function MakeWorldPlant(name)
         if not TheWorld.ismastersim then
             return inst
         end
-        
-        inst.entity:SetPristine() 
+
+        inst.entity:SetPristine()
 
         inst:AddComponent("inspectable")
-        
+
 		if name == "potato" then
 			-- Potatoes are not pickable; you use a shovel to get them
 			inst:AddComponent("lootdropper")
@@ -84,7 +83,7 @@ local function MakeWorldPlant(name)
 
     	MakeSmallBurnable(inst)
         MakeSmallPropagator(inst)
-    	
+
         return inst
     end
 
