@@ -11,7 +11,7 @@ Sean Closson - http://seanclosson.com
 
 Creative Commons Attributions:
 
-Pickle Barrel Open/Close Sounds: 
+Pickle Barrel Open/Close Sounds:
 	Mike Koenig - "Drawer Slide Close Sound" - http://soundbible.com/590-Drawer-Slide-Close.html
 Pickle Barrel Pickling Sound:
 	snottyboy - "Large Bubble Sound" - http://soundbible.com/1345-Large-Bubble.html
@@ -20,12 +20,14 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2015-12-13 [Version 1.3.9] - Quick potato digging fix for DST update
+
 2015-05-02 [Version 1.3.8] - Quick drying rack fix for DST update
  - Fix for renamed dryer functions in latest DST update
 
 2015-04-26 [Version 1.3.7] - Quick drying rack fix for DST update
  - Removed deprecated dryer functions according to latest DST update
- 
+
 2015-04-25 [Version 1.3.6] - Quick fix for DST update
  - Changed crafting recipes according to latest DST update
 
@@ -74,7 +76,7 @@ Update History:
  - Updated API version #
  - Added tallbird egg to pickled egg recipe
  - Fixed planted radish description
- 
+
 
 2013-11-22 - Added more vegetables and pigs feet
  - Added new vegetables: beet, onion, radish
@@ -83,21 +85,21 @@ Update History:
  - New vegetables grow wild in the world
  - Added pigs feet, cooked pigs feet, and pickled pigs feet
  - Pigs drop 1-2 pigs feet upon death
- 
- 
+
+
 2013-11-18 - Added more pickled food + tweaks
  - Added pickled recipes for: carrot, corn, eggplant, mushroom, pumpkin
  - Reduced pickle time to 3 days
  - Made pickled mush 2x as effective on farm plots
  - Slowed perish time on food while pickling
- 
+
 
 2013-11-17 - Added pickle barrel
  - Pickled barrel is craftable on Science Machines
  - Added cabbage (all functionality of cucumber)
  - Added pickled recipes for: cabbage, cucumber, egg, fish
  - Added pickled mush for invalid pickled foods
- 
+
 
 2013-11-10 - Added new cucumber vegetable
  - Regular seeds have a chance of producing a cucumber
