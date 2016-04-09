@@ -19,32 +19,22 @@ local COMMON = 3
 local UNCOMMON = 1
 local RARE = .5
 
-PICKLEITVEGGIES = 
-{											--sw,	hunger, 									health, 									perish_time, 						sanity, 
-											--		cooked_hunger, 						cooked_health, 						cooked_perish_time, 			cooked_sanity
-											
- 	beet = MakeVegStats(		.5,	TUNING.CALORIES_SMALL,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 			0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 			0),
-																	
-	cabbage = MakeVegStats(	2,		TUNING.CALORIES_SMALL,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 			0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 			TUNING.SANITY_SUPERTINY),
-																	
-	cucumber = MakeVegStats(2,		TUNING.CALORIES_SMALL,			0,											TUNING.PERISH_MED, 			0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_SMALL,		TUNING.PERISH_FAST, 			0),
-																	
-	onion = MakeVegStats(		1,		TUNING.CALORIES_SMALL,			0,											TUNING.PERISH_MED, 			0,		
-													TUNING.CALORIES_SMALL,			TUNING.HEALING_SMALL,		TUNING.PERISH_FAST, 			TUNING.SANITY_TINY),
-																	
-	potato = MakeVegStats(		2,		TUNING.CALORIES_SMALL,			-TUNING.HEALING_SMALL,		TUNING.PERISH_SLOW, 			-TUNING.SANITY_SMALL,		
-													TUNING.CALORIES_MEDSMALL,	TUNING.HEALING_SMALL,		TUNING.PERISH_SUPERFAST, TUNING.SANITY_SUPERTINY),
-																	
-	radish = MakeVegStats(		.5,	TUNING.CALORIES_TINY,			TUNING.HEALING_TINY,			TUNING.PERISH_MED, 			0,		
-													TUNING.CALORIES_TINY,			TUNING.HEALING_MEDSMALL,	TUNING.PERISH_FAST, 			TUNING.SANITY_SUPERTINY),
+PICKLEITVEGGIES =
+{
+	--sw, hunger, health, perish_time, sanity, cooked_hunger, cooked_health, cooked_perish_time,cooked_sanity
+	beet = MakeVegStats(.5,TUNING.CALORIES_SMALL,TUNING.HEALING_TINY,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_MEDSMALL,TUNING.PERISH_FAST,0),
+	cabbage = MakeVegStats(	2,TUNING.CALORIES_SMALL,TUNING.HEALING_TINY,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_MEDSMALL,TUNING.PERISH_FAST,TUNING.SANITY_SUPERTINY),
+	cucumber = MakeVegStats(2,TUNING.CALORIES_SMALL,0,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_SMALL,TUNING.PERISH_FAST,0),
+	onion = MakeVegStats(1,TUNING.CALORIES_SMALL,0,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_SMALL,TUNING.PERISH_FAST,TUNING.SANITY_TINY),
+	potato = MakeVegStats(2,TUNING.CALORIES_SMALL,-TUNING.HEALING_SMALL,TUNING.PERISH_SLOW,-TUNING.SANITY_SMALL,TUNING.CALORIES_MEDSMALL,TUNING.HEALING_SMALL,TUNING.PERISH_SUPERFAST, TUNING.SANITY_SUPERTINY),
+	radish = MakeVegStats(.5,TUNING.CALORIES_TINY,TUNING.HEALING_TINY,TUNING.PERISH_MED,0,TUNING.CALORIES_TINY,TUNING.HEALING_MEDSMALL,TUNING.PERISH_FAST,TUNING.SANITY_SUPERTINY),
 }
 
 -- Make Pickle It veggies usable in the crock pot
-local veggies = {"beet", "cabbage", "cucumber", "onion", "potato", "radish"}
+local veggies = {"beet", "cabbage", "cucumber", "onion", "radish"}
 AddIngredientValues(veggies, {veggie=1}, true)
+-- Compatibility with "Waiter 101"
+AddIngredientValues({"potato"}, {veggie=1, tuber=1}, true)
 
 local assets_seeds =
 {
@@ -73,13 +63,13 @@ local function MakeVeggie(name, has_seeds)
 	    Asset("IMAGE", "images/inventoryimages/"..name.."_seeds.tex"),
 	    Asset("ATLAS", "images/inventoryimages/"..name.."_seeds.xml"),
 	}
-		
+
 	local prefabs =
 	{
 		name.."_cooked",
 		"spoiled_food",
 	}
-	
+
 	if has_seeds then
 		table.insert(prefabs, name.."_seeds")
 	end
@@ -90,7 +80,7 @@ local function MakeVeggie(name, has_seeds)
 		inst.entity:AddTransform()
 		inst.entity:AddAnimState()
         inst.entity:AddNetwork()
-	    
+
 		MakeInventoryPhysics(inst)
 
         inst.AnimState:SetBank("seeds")
@@ -159,7 +149,7 @@ local function MakeVeggie(name, has_seeds)
 		inst:AddComponent("edible")
 		inst.components.edible.healthvalue 	= PICKLEITVEGGIES[name].health
 		inst.components.edible.hungervalue 	= PICKLEITVEGGIES[name].hunger
-		inst.components.edible.sanityvalue 	= PICKLEITVEGGIES[name].sanity or 0		
+		inst.components.edible.sanityvalue 	= PICKLEITVEGGIES[name].sanity or 0
 		inst.components.edible.foodtype 	= FOODTYPE.VEGGIE
 
         inst:AddComponent("stackable")
@@ -174,10 +164,10 @@ local function MakeVeggie(name, has_seeds)
 		inst:AddComponent("perishable")
 		inst.components.perishable:SetPerishTime(PICKLEITVEGGIES[name].perishtime)
 		inst.components.perishable:StartPerishing()
-		inst.components.perishable.onperishreplacement = "spoiled_food"   
+		inst.components.perishable.onperishreplacement = "spoiled_food"
 
 		inst:AddComponent("bait")
-		
+
 		-- Potatoes are a little special
 		if name == "potato" then
 			-- Potatoes are their own seeds
@@ -190,13 +180,13 @@ local function MakeVeggie(name, has_seeds)
 		inst.components.cookable.product = name.."_cooked"
 
 	    MakeSmallBurnable(inst)
-		MakeSmallPropagator(inst) 
+		MakeSmallPropagator(inst)
 
 		MakeHauntableLaunchAndPerish(inst)
 
 		return inst
 	end
-	
+
 	local function fn_cooked()
 		local inst = CreateEntity()
 
@@ -263,12 +253,12 @@ for veggiename,veggiedata in pairs(PICKLEITVEGGIES) do
 	else
 		veg, cooked, seeds = MakeVeggie(veggiename, true)
 	end
-	
+
 	table.insert(prefs, veg)
 	table.insert(prefs, cooked)
 	if seeds then
 		table.insert(prefs, seeds)
-		
+
 		-- Add them to global
 		VEGGIES[veggiename] = veggiedata
 	end
