@@ -19,12 +19,14 @@ local assets=
     Asset("IMAGE", "images/inventoryimages/pickle_barrel.tex"),
 }
 
+-- Changing this to modimport() doesn't work as-is... I'm invading the global STRINGS space in strings, and adding c_ helper functions in helpers...
+-- So for now these are staying part of the global space, and not being sandboxed into the mod space.
+-- When I have more time I'll look into changing it because STRINGS could have conflicts as-is
 local require = GLOBAL.require
 require "pickleit_strings"
 require "pickleit_helpers"
 
 AddMinimapAtlas("images/inventoryimages/pickle_barrel.xml")
-
 
 AddReplicableComponent('pickler')
 
@@ -44,7 +46,7 @@ pickleit_dopickle = function(act)
 	end
 
 	return false
-end 
+end
 AddAction('PICKLEIT', GLOBAL.STRINGS.NAMES.PICKLE, pickleit_dopickle)
 AddStategraphActionHandler('wilson_client', GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKLEIT, "dolongaction"))
 AddStategraphActionHandler('wilson', GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKLEIT, "dolongaction"))
@@ -117,12 +119,12 @@ local function ModDryingRack(inst)
 
     inst.components.dryer:SetStartDryingFn(onstartdrying)
 	inst.components.dryer:SetDoneDryingFn(setdone)
-	
+
 	-- Klei apparently removed these functions :|
 	--inst.components.dryer:SetContinueDryingFn(onstartdrying)
     --inst.components.dryer:SetContinueDoneFn(setdone)
 end
- 
+
 AddPrefabPostInit("meatrack", ModDryingRack)
 
 -- Override for potatoes on farm giving multiples
@@ -141,15 +143,15 @@ Crop.Harvest = function(self, harvester, ...)
 	        else
 	            product.Transform:SetPosition(self.grower.Transform:GetWorldPosition())
 	            Launch(product, self.grower, TUNING.LAUNCH_SPEED_SMALL)
-	        end 
-	        GLOBAL.ProfileStatsAdd("grown_"..product.prefab) 
-	        
+	        end
+	        GLOBAL.ProfileStatsAdd("grown_"..product.prefab)
+
 	        self.matured = false
 	        self.growthpercent = 0
 	        self.product_prefab = nil
 	        self.grower.components.grower:RemoveCrop(self.inst)
 	        self.grower = nil
-	        
+
 	        return true
 	    end
 	    return
