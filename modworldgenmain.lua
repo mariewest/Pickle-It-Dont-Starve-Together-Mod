@@ -2,15 +2,15 @@ GLOBAL.require("map/terrain")
 
 -- Add beets to the world spawn in forests
 AddRoomPreInit("Clearing", function(room) room.contents.distributeprefabs.beet_planted = 0.045 end)
-AddRoomPreInit("BGForest", function(room) room.contents.distributeprefabs.beet_planted = 002 end)
-AddRoomPreInit("Forest", function(room) room.contents.distributeprefabs.beet_planted = 0015 end)
+AddRoomPreInit("BGForest", function(room) room.contents.distributeprefabs.beet_planted = 0.02 end)
+AddRoomPreInit("Forest", function(room) room.contents.distributeprefabs.beet_planted = 0.015 end)
 AddRoomPreInit("CrappyForest", function(room) room.contents.distributeprefabs.beet_planted = 0.03 end)
 AddRoomPreInit("BGCrappyForest", function(room) room.contents.distributeprefabs.beet_planted = 0.03 end)
 GLOBAL.terrain.filter.beet_planted = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
 
 -- Add onions to the world spawn in forests
 AddRoomPreInit("Clearing", function(room) room.contents.distributeprefabs.onion_planted = 0.01 end)
-AddRoomPreInit("BGForest", function(room) room.contents.distributeprefabs.onion_planted = 0035 end)
+AddRoomPreInit("BGForest", function(room) room.contents.distributeprefabs.onion_planted = 0.035 end)
 AddRoomPreInit("Forest", function(room) room.contents.distributeprefabs.onion_planted = 0.035 end)
 AddRoomPreInit("BGCrappyForest", function(room) room.contents.distributeprefabs.onion_planted = 0.02 end)
 AddRoomPreInit("CrappyForest", function(room) room.contents.distributeprefabs.onion_planted = 0.02 end)
