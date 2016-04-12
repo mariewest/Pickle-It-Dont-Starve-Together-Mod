@@ -20,6 +20,10 @@ Pickle Barrel Pickling Sound:
 
 Update History:
 
+2016-04-10 [Version 1.3.10] - Quick compatibility fixes
+ - Added compatibility for "Waiter 101"
+ - Fixed compatibility issues related to worldgen changes
+
 2015-12-13 [Version 1.3.9] - Quick potato digging fix for DST update
 
 2015-05-02 [Version 1.3.8] - Quick drying rack fix for DST update
@@ -44,17 +48,14 @@ Update History:
  - Added restrictions on what can go in the pickle barrel
  - Obsolete code clean-up
 
-
 2015-03-10 [Version 1.3.3] - Added pickle sword
  - Added pickle sword
  - Resolved conflict with other container mods
-
 
 2015-03-09 [Version 1.3.2] - Minor fixes
  - Added sortkey for pickle barrel recipe
  - Added priority to modinfo
  - Made onion rings restore a little sanity
-
 
 2015-03-08 [Version 1.3.0] - Don't Starve Together Port
  - Ported to Don't Starve Together (DST)
@@ -64,19 +65,16 @@ Update History:
  - New cabbage image
  - Tweaked food values
 
-
 2014-07-05 - Tweaked stats
  - Updated API version #
  - Modified pickle barrel crafting components (removed wet goop and gold; added rope)
  - Adjusted pickled food stat values
  - Reduced pickling time from 3 days to 2 days
 
-
 2014-03-09 - New mod API version & minor fixes
  - Updated API version #
  - Added tallbird egg to pickled egg recipe
  - Fixed planted radish description
-
 
 2013-11-22 - Added more vegetables and pigs feet
  - Added new vegetables: beet, onion, radish
@@ -86,20 +84,17 @@ Update History:
  - Added pigs feet, cooked pigs feet, and pickled pigs feet
  - Pigs drop 1-2 pigs feet upon death
 
-
 2013-11-18 - Added more pickled food + tweaks
  - Added pickled recipes for: carrot, corn, eggplant, mushroom, pumpkin
  - Reduced pickle time to 3 days
  - Made pickled mush 2x as effective on farm plots
  - Slowed perish time on food while pickling
 
-
 2013-11-17 - Added pickle barrel
  - Pickled barrel is craftable on Science Machines
  - Added cabbage (all functionality of cucumber)
  - Added pickled recipes for: cabbage, cucumber, egg, fish
  - Added pickled mush for invalid pickled foods
-
 
 2013-11-10 - Added new cucumber vegetable
  - Regular seeds have a chance of producing a cucumber
