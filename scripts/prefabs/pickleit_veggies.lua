@@ -25,16 +25,12 @@ PICKLEITVEGGIES =
 	beet = MakeVegStats(.5,TUNING.CALORIES_SMALL,TUNING.HEALING_TINY,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_MEDSMALL,TUNING.PERISH_FAST,0),
 	cabbage = MakeVegStats(	2,TUNING.CALORIES_SMALL,TUNING.HEALING_TINY,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_MEDSMALL,TUNING.PERISH_FAST,TUNING.SANITY_SUPERTINY),
 	cucumber = MakeVegStats(2,TUNING.CALORIES_SMALL,0,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_SMALL,TUNING.PERISH_FAST,0),
-	onion = MakeVegStats(1,TUNING.CALORIES_SMALL,0,TUNING.PERISH_MED,0,TUNING.CALORIES_SMALL,TUNING.HEALING_SMALL,TUNING.PERISH_FAST,TUNING.SANITY_TINY),
-	potato = MakeVegStats(2,TUNING.CALORIES_SMALL,-TUNING.HEALING_SMALL,TUNING.PERISH_SLOW,-TUNING.SANITY_SMALL,TUNING.CALORIES_MEDSMALL,TUNING.HEALING_SMALL,TUNING.PERISH_SUPERFAST, TUNING.SANITY_SUPERTINY),
 	radish = MakeVegStats(.5,TUNING.CALORIES_TINY,TUNING.HEALING_TINY,TUNING.PERISH_MED,0,TUNING.CALORIES_TINY,TUNING.HEALING_MEDSMALL,TUNING.PERISH_FAST,TUNING.SANITY_SUPERTINY),
 }
 
 -- Make Pickle It veggies usable in the crock pot
-local veggies = {"beet", "cabbage", "cucumber", "onion", "radish"}
+local veggies = {"beet", "cabbage", "cucumber", "radish"}
 AddIngredientValues(veggies, {veggie=1}, true)
--- Compatibility with "Waiter 101"
-AddIngredientValues({"potato"}, {veggie=1, tuber=1}, true)
 
 local assets_seeds =
 {
@@ -247,12 +243,7 @@ local prefs = {}
 for veggiename,veggiedata in pairs(PICKLEITVEGGIES) do
 	local veg, cooked, seeds
 
-	-- Potatoes don't have seeds; all other veggies do
-	if veggiename == "potato" then
-		veg, cooked, seeds = MakeVeggie(veggiename, false)
-	else
-		veg, cooked, seeds = MakeVeggie(veggiename, true)
-	end
+	veg, cooked, seeds = MakeVeggie(veggiename, true)
 
 	table.insert(prefs, veg)
 	table.insert(prefs, cooked)

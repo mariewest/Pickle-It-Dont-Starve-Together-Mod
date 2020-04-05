@@ -195,26 +195,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.MUSHROOM_PICKLED = {
 
 -- Onion
 
-STRINGS.NAMES.ONION = "Onion"
-STRINGS.NAMES.ONION_COOKED = "Onion Rings"
-STRINGS.NAMES.ONION_SEEDS = "Onion Seeds"
 STRINGS.NAMES.ONION_PICKLED = "Pickled Onion"
 STRINGS.NAMES.ONION_PLANTED = "Onion"
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION = {	
-	"*Sob* Who's cutting onions?",
-	"Ogres are like onions",
-	"Onions always make me cry",
-	"I can pickle that!",
-}
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_COOKED = {	
-	"If you like it, you should put an onion ring on it",
-	"If you hear an onion ring, answer it",
-	"I guess this makes me the Lord of the Onion Rings",
-}
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_SEEDS = {	
-	"It's a seed.", 
-}
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_PICKLED = {	
 	"What's round, white, and giggles?\nA tickled onion!",
 	"Beautiful and zesty... yum!",
@@ -225,21 +208,8 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONION_PLANTED = {
 
 -- Potato
 
-STRINGS.NAMES.POTATO = "Potato"
-STRINGS.NAMES.POTATO_COOKED = "Skillet Potatoes"
 STRINGS.NAMES.POTATO_PLANTED = "Potato"
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO = {	
-	"Boil 'em, mash 'em, stick 'em in a stew",
-	"I think, therefore I yam",
-	"Taters gonna tate",
-	"What's taters, precious?",
-	"What has eyes but can't see?\nPotatoes!",
-}
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO_COOKED = {	
-	"Simple, quick, and delicious potatoes", 
-	"Flavorful fried potatoes", 
-}
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.POTATO_PLANTED = {	
 	"If I want that potato, I'll need a shovel",
 }
